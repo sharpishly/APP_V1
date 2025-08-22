@@ -40,14 +40,14 @@ jobs:
             cd live.sharpishly.com
             # or main, depending on the branch
             git stash
-            git checkout master
+            git checkout live
             git pull
             cd ..
 
             cd dev.sharpishly.com
             # or main, depending on the branch
             git stash
-            git checkout master
+            git checkout dev
             git pull
             cd ..
 
