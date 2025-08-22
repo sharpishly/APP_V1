@@ -23,9 +23,6 @@ jobs:
           script: |
             # Navigate to the correct directory
 
-            # Stop nginx on the host after reboot
-            #sudo service nginx stop
-
             # Master branch
             cd /var/www/app
             
@@ -37,12 +34,11 @@ jobs:
             # Git pull command by it's self
             git pull origin master
 
-            # Move into submodule folder and pull latest changes
-            cd python_project
+            cd live.sharpishly.com
             # or main, depending on the branch
             git stash
             git checkout master
-            git pull origin master
+            git pull
             cd ..
 
             cd dev.sharpishly.com
@@ -52,16 +48,27 @@ jobs:
             git pull
             cd ..
 
+            # Move into submodule folder and pull latest changes
+            cd python_app
+            # or main, depending on the branch
+            git stash
+            git checkout master
+            git pull origin master
+            cd ..
+
+            # Move into submodule folder and pull latest changes
+            cd python_mvc
+            # or main, depending on the branch
+            git stash
+            git checkout master
+            git pull origin master
+            cd ..
+
             # Git pull master repository and submodules
             git submodule update --init --recursive
 
             # Allow acces through firewall
             sudo ufw allow 80
-            sudo ufw allow 443
-            sudo ufw allow 8080
-            sudo ufw allow 8443
-            sudo ufw allow 1000
-            sudo ufw allow 2000
             sudo ufw status
 
             # Set File and folder permissions
