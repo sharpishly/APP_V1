@@ -36,7 +36,7 @@
         <section class="bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 class="text-3xl font-semibold text-gray-800 mb-4">Upgrading to v0.1</h2>
             <p class="text-gray-600 leading-relaxed">
-                <a href="https://dev.sharpishly.com">Site is undergoing an upgrade to version 0.1 Have a sneak peak here</a>
+                <a href="#">Site is undergoing an upgrade to version 0.1 Have a sneak peak here</a>
             </p>
         </section>
 

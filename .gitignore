@@ -1,4 +1,9 @@
 #shells
 commit.sh
 
+#
 /shells
+
+# MySQL and back-up files
+mysql_data/
+*.bak
