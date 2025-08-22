@@ -1,10 +1,10 @@
 name: Deploy to DigitalOcean Droplet
 
-# This workflow runs on a push to the 'master' branch
+# This workflow runs on a push to the 'main' branch
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
