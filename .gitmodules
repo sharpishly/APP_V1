@@ -1,0 +1,15 @@
+[submodule "dev.sharpishly.com"]
+	path = dev.sharpishly.com
+	url = git@bitbucket.org:don_dev/php-mini-framework.git
+[submodule "live.sharpishly.com"]
+	path = live.sharpishly.com
+	url = git@bitbucket.org:don_dev/php-mini-framework.git
+[submodule "python_app"]
+	path = python_app
+	url = git@github.com:sharpishly/DOCKER_PYTHON_SETUP.git
+[submodule "python_mvc"]
+	path = python_mvc
+	url = git@github.com:sharpishly/PYTHONMVC.git
+[submodule "node_app"]
+	path = node_app
+	url = git@github.com:sharpishly/DOCKER_NODEJS_SETUP.git
