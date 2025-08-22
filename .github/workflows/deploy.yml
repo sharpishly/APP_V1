@@ -34,6 +34,9 @@ jobs:
             # Git pull command by it's self
             git pull origin master
 
+            # Git pull master repository and submodules
+            git submodule update --init --recursive
+            
             cd live.sharpishly.com
             # or main, depending on the branch
             git stash
@@ -63,9 +66,6 @@ jobs:
             git checkout master
             git pull origin master
             cd ..
-
-            # Git pull master repository and submodules
-            git submodule update --init --recursive
 
             # Allow acces through firewall
             sudo ufw allow 80
