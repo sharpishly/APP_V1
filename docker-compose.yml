@@ -5,6 +5,7 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx_proxy
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
@@ -20,18 +21,12 @@ services:
       - php_fpm
       - python_app
       - node_app
+      - mysql
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost"]
+      test: ["CMD", "curl", "-f", "http://localhost/"]
       interval: 30s
       timeout: 10s
       retries: 3
-    command: >
-      /bin/sh -c "
-        chmod -R 755 /var/www/html/sharpishly &&
-        chmod -R 755 /var/www/html/python_app &&
-        chmod -R 755 /var/www/html/node_app &&
-        chown -R www-data:www-data /var/www/html &&
-        nginx -g 'daemon off;'"
 
   # PHP-FPM Service
   php_fpm:
@@ -39,8 +34,10 @@ services:
       context: ./sharpishly.com
       dockerfile: Dockerfile.php
     container_name: php_fpm
+    restart: unless-stopped
     volumes:
-      - ./sharpishly.com/public:/var/www/html/sharpishly
+      - ./sharpishly.com/website/public:/var/www/html/sharpishly
+      - composer_cache:/root/.composer
     networks:
       - app-network
     healthcheck:
@@ -55,8 +52,9 @@ services:
       context: ./python_app
       dockerfile: Dockerfile
     container_name: python_app
-    ports:
-      - "3000:3000"
+    restart: unless-stopped
+    expose:
+      - "3000"
     networks:
       - app-network
     healthcheck:
@@ -71,8 +69,9 @@ services:
       context: ./node_app
       dockerfile: Dockerfile
     container_name: node_app
-    ports:
-      - "4000:4000"
+    restart: unless-stopped
+    expose:
+      - "4000"
     networks:
       - app-network
     healthcheck:
@@ -81,6 +80,29 @@ services:
       timeout: 10s
       retries: 3
 
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecretpassword
+      MYSQL_DATABASE: sharpishly
+      MYSQL_USER: sharpishly_user
+      MYSQL_PASSWORD: sharpishly_pass
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  composer_cache:
