@@ -23,7 +23,7 @@ jobs:
           script: |
             # Navigate to the correct directory
 
-            # Master branch
+            # main branch
             cd /var/www/app
             
             # Run the deployment commands provided by the user
@@ -32,11 +32,11 @@ jobs:
             git stash
 
             # Git pull command by it's self
-            git pull origin master
+            git pull origin main
 
-            # Git pull master repository and submodules
+            # Git pull main repository and submodules
             git submodule update --init --recursive
-            
+
             cd live.sharpishly.com
             # or main, depending on the branch
             git stash
@@ -76,14 +76,14 @@ jobs:
             sudo chmod -R 755 /var/www/app/dev.sharpishly.com/website/public
             sudo chown -R www-data:www-data /var/www/app/sharpishly.com/website/public
             sudo chown -R www-data:www-data /var/www/app/dev.sharpishly.com/website/public
-            sudo chmod -R 755 /var/www/app/python_project
-            sudo chown -R www-data:www-data /var/www/app/python_project
-            sudo chmod -R 755 /var/www/app/node_project
-            sudo chown -R www-data:www-data /var/www/app/node_project
-            sudo chmod -R 755 /var/www/app/letsencrypt
-            sudo chown -R root:root /var/www/app/letsencrypt
-            sudo chmod -R 755 /etc/letsencrypt
-            sudo chown -R www-data:www-data /etc/letsencrypt
+            sudo chmod -R 755 /var/www/app/python_app
+            sudo chown -R www-data:www-data /var/www/app/python_app
+            sudo chmod -R 755 /var/www/app/node_app
+            sudo chown -R www-data:www-data /var/www/app/node_app
+            #sudo chmod -R 755 /var/www/app/letsencrypt
+            #sudo chown -R root:root /var/www/app/letsencrypt
+            #sudo chmod -R 755 /etc/letsencrypt
+            #sudo chown -R www-data:www-data /etc/letsencrypt
 
             # Stop docker
             docker-compose down
