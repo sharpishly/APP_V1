@@ -32,6 +32,7 @@ services:
       - ./sharpishly.com/website:/var/www/app/sharpishly.com/website
       - ./dev.sharpishly.com/website:/var/www/app/dev.sharpishly.com/website
       - ./live.sharpishly.com/website:/var/www/app/live.sharpishly.com/website
+      - ./dev.sharpishly.com/website/public/.well-known:/var/www/app/dev.sharpishly.com/website/public/.well-known
     environment:
       - DB_HOST=db
       - DB_USER=sharpishly_user
