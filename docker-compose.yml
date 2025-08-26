@@ -12,10 +12,28 @@ services:
       - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
       - ./live.sharpishly.com/website/public:/var/www/app/live.sharpishly.com/website/public
       - ./certs:/var/www/app/certs
+    depends_on:
+      - php
     networks:
       - app-network
     healthcheck:
       test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  php:
+    image: php:8.2-fpm
+    container_name: php_fpm
+    restart: unless-stopped
+    volumes:
+      - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
+      - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
+      - ./live.sharpishly.com/website/public:/var/www/app/live.sharpishly.com/website/public
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "php-fpm", "-t"]
       interval: 30s
       timeout: 10s
       retries: 3
