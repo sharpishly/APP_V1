@@ -1,7 +1,8 @@
 #shells
 commit.sh
 start.sh
-
+stop.sh
+cleanup.sh
 #
 /shells
 
