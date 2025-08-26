@@ -3,6 +3,7 @@ commit.sh
 start.sh
 stop.sh
 cleanup.sh
+generate_ssl_certificate.sh
 #
 /shells
 

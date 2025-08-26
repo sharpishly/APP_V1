@@ -9,7 +9,9 @@ services:
     volumes:
       - ./nginx/sharpishly.conf:/etc/nginx/conf.d/default.conf
       - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
-      - /etc/letsencrypt:/etc/letsencrypt
+      - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
+      - ./live.sharpishly.com/website/public:/var/www/app/live.sharpishly.com/website/public
+      - ./certs:/var/www/app/certs
     networks:
       - app-network
     healthcheck:
