@@ -12,8 +12,22 @@ services:
       - ./sharpishly.com:/var/www/app/sharpishly.com
       # Mount development code
       - ./dev.sharpishly.com:/var/www/app/dev.sharpishly.com
+    environment:
+      - DB_HOST=db
+      - DB_USER=sharpishly_user
+      - DB_PASSWORD=Addy@789xx$
+      - DB_NAME=sharpishly_db
     networks:
       - app-network
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "php-fpm", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   # ------------------------------
   # Nginx reverse proxy
   # ------------------------------
@@ -39,9 +53,41 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
+  # ------------------------------
+  # MySQL database
+  # ------------------------------
+  db:
+    image: mysql:8.0
+    container_name: app-db-1
+    ports:
+      - "3306:3306" # Map container port to host port
+    environment:
+      - MYSQL_DATABASE=sharpishly_db
+      - MYSQL_USER=sharpishly_user
+      - MYSQL_PASSWORD=Addy@789xx$
+      - MYSQL_ROOT_PASSWORD=Addy@789xx$
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/logs:/var/log/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pAddy@789xx$"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    networks:
+      - app-network
+    command: >
+      --default-authentication-plugin=mysql_native_password
+      --port=3306
+      --bind-address=0.0.0.0
+
   # ------------------------------
   # Shared Docker network
   # ------------------------------
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  mysql_data:
