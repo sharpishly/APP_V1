@@ -1,7 +1,10 @@
 #shells
 commit.sh
 start.sh
-
+.Trash-1000/
+generate_ssl_certificate.sh
+nginx_reload.sh
+stop.sh
 #
 /shells
 
