@@ -1,4 +1,23 @@
 services:
+  # ------------------------------
+  # PHP-FPM service (shared for prod + dev)
+  # ------------------------------
+  php:
+    build:
+      context: .                 # FIXED: build from repo root (where Dockerfile actually is)
+      dockerfile: Dockerfile     # FIXED: explicit, avoids "no such file or directory"
+    container_name: php_fpm
+    volumes:
+      # Mount production code
+      - ./sharpishly.com:/var/www/app/sharpishly.com
+      # Mount development code
+      - ./dev.sharpishly.com:/var/www/app/dev.sharpishly.com
+    networks:
+      - app-network
+
+  # ------------------------------
+  # Nginx reverse proxy
+  # ------------------------------
   nginx:
     image: nginx:latest
     container_name: nginx_proxy
@@ -7,17 +26,27 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/sharpishly.conf:/etc/nginx/conf.d/default.conf
+      # Our nginx vhost configs (sharpishly.conf has prod + dev merged)
+      - ./nginx:/etc/nginx/conf.d
+      # Production public directory
       - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
+      # Development public directory
+      - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
+      # SSL certificates (prod + dev)
       - /etc/letsencrypt:/etc/letsencrypt
     networks:
       - app-network
+    depends_on:
+      - php   # Ensure PHP-FPM starts first
     healthcheck:
       test: ["CMD", "nginx", "-t"]
       interval: 30s
       timeout: 10s
       retries: 3
 
+# ------------------------------
+# Shared Docker network
+# ------------------------------
 networks:
   app-network:
     driver: bridge

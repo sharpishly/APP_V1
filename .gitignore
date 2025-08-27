@@ -5,6 +5,8 @@ start.sh
 generate_ssl_certificate.sh
 nginx_reload.sh
 stop.sh
+cleanup_docker.sh
+summary.txt
 #
 /shells
 
