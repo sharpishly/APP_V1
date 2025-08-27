@@ -4,8 +4,8 @@ services:
   # ------------------------------
   php:
     build:
-      context: .                 # FIXED: build from repo root (where Dockerfile actually is)
-      dockerfile: Dockerfile     # FIXED: explicit, avoids "no such file or directory"
+      context: . # Build from repo root (where Dockerfile actually is)
+      dockerfile: Dockerfile # Explicit Dockerfile path
     container_name: php_fpm
     volumes:
       # Mount production code
@@ -14,7 +14,6 @@ services:
       - ./dev.sharpishly.com:/var/www/app/dev.sharpishly.com
     networks:
       - app-network
-
   # ------------------------------
   # Nginx reverse proxy
   # ------------------------------
@@ -23,30 +22,26 @@ services:
     container_name: nginx_proxy
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80" # Removed 443 since SSL is disabled
     volumes:
-      # Our nginx vhost configs (sharpishly.conf has prod + dev merged)
+      # Nginx vhost configs (merged sharpishly.conf for prod + dev)
       - ./nginx:/etc/nginx/conf.d
       # Production public directory
       - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
       # Development public directory
       - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
-      # SSL certificates (prod + dev)
-      - /etc/letsencrypt:/etc/letsencrypt
     networks:
       - app-network
     depends_on:
-      - php   # Ensure PHP-FPM starts first
+      - php # Ensure PHP-FPM starts before Nginx
     healthcheck:
-      test: ["CMD", "nginx", "-t"]
+      test: ["CMD", "nginx", "-t"] # Validate Nginx config
       interval: 30s
       timeout: 10s
       retries: 3
-
-# ------------------------------
-# Shared Docker network
-# ------------------------------
+  # ------------------------------
+  # Shared Docker network
+  # ------------------------------
 networks:
   app-network:
     driver: bridge
