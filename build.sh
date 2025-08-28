@@ -67,12 +67,21 @@ docker compose down
 docker compose down
 
 # ------------------------------
-# Creating local sharpishly.dev
+# Creating Nginx from local resourse
 # ------------------------------
-echo ">>> Creating local sharpishly.dev..."
+echo ">>> Creating Nginx from local resourse..."
 sudo rm -R nginx
 sudo cp -R local-nginx/ nginx 
 sudo chown -R joe90:joe90 nginx
+
+
+# ------------------------------
+# Creating docker-compose.yml from local resource
+# ------------------------------
+echo ">>> Creating docker-compose.yml from local resource..."
+sudo rm docker-compose.yml
+sudo cp local-docker-compose.yml docker-compose.yml 
+sudo chown joe90:joe90 docker-compose.yml
 
 
 # ------------------------------
