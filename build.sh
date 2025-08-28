@@ -67,6 +67,15 @@ docker compose down
 docker compose down
 
 # ------------------------------
+# Creating local sharpishly.dev
+# ------------------------------
+echo ">>> Creating local sharpishly.dev..."
+sudo rm -R nginx
+sudo cp -R local-nginx/ nginx 
+sudo chown -R joe90:joe90 nginx
+
+
+# ------------------------------
 # Build & start full stack (including nginx with SSL)
 # ------------------------------
 echo ">>> Build & start full stack..."
