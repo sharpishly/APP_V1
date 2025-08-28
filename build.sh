@@ -33,7 +33,7 @@ echo ">>> Stopping Nginx if running"
 
 sudo systemctl stop nginx
 sudo systemctl disable nginx
-sudo systemctl status nginx
+#sudo systemctl status nginx
 
 
 echo ">>> Cleanup complete."
@@ -96,4 +96,30 @@ sudo chmod 777 dev.sharpishly.com/website/env.php
 # Docker Status
 # ------------------------------
 docker ps -a
-docker logs php_fpm
+#docker logs php_fpm
+
+
+# ------------------------------
+# Add host names
+# ------------------------------
+HOSTS_FILE="/etc/hosts"
+HOSTNAMES=(
+  "sharpishly.dev"
+  "dev.sharpishly.dev"
+  "live.sharpishly.dev"
+  "py.sharpishly.dev"
+)
+
+for HOST in "${HOSTNAMES[@]}"; do
+    ENTRY="127.0.0.1 $HOST"
+    if grep -qE "^[[:space:]]*127\.0\.0\.1[[:space:]]+$HOST(\s|$)" "$HOSTS_FILE"; then
+        echo "Entry for $HOST already exists in $HOSTS_FILE"
+    else
+        echo "Adding entry for $HOST"
+        echo "$ENTRY" | sudo tee -a "$HOSTS_FILE" > /dev/null
+    fi
+done
+
+
+
+
