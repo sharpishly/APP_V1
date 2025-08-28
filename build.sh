@@ -1,6 +1,7 @@
 #!/bin/bash
-
 set -e
+
+clear
 
 echo ">>> Stopping containers and cleaning up..."
 
@@ -77,6 +78,7 @@ docker compose up -d
 # ------------------------------
 # Allow port 80 access
 # ------------------------------
+echo ">>> Configure port access..."
 sudo ufw status
 sudo ufw allow 80
 sudo ufw allow 443
@@ -85,6 +87,7 @@ sudo ufw reload
 # ------------------------------
 # File & folder permissions
 # ------------------------------
+echo ">>> Set folder permissions..."
 sudo sudo chown -R joe90:www-data dev.sharpishly.com
 sudo find dev.sharpishly.com -type d -exec chmod 755 {} \;
 sudo find dev.sharpishly.com -type f -exec chmod 644 {} \;
@@ -95,6 +98,7 @@ sudo chmod 777 dev.sharpishly.com/website/env.php
 # ------------------------------
 # Docker Status
 # ------------------------------
+echo ">>> Docker status ..."
 docker ps -a
 #docker logs php_fpm
 
@@ -102,6 +106,7 @@ docker ps -a
 # ------------------------------
 # Add host names
 # ------------------------------
+echo ">>> Add host names..."
 HOSTS_FILE="/etc/hosts"
 HOSTNAMES=(
   "sharpishly.dev"
@@ -119,6 +124,12 @@ for HOST in "${HOSTNAMES[@]}"; do
         echo "$ENTRY" | sudo tee -a "$HOSTS_FILE" > /dev/null
     fi
 done
+
+# ------------------------------
+# Testing sharpishly.dev
+# ------------------------------
+echo ">>> Testing sharpishly.dev..."
+curl -k http://sharpishly.dev
 
 
 
