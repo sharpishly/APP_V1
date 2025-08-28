@@ -1,7 +1,9 @@
 #shells
 commit.sh
 start.sh
-
+generate_ssl_certificate.sh
+nginx_reload.sh
+summary.txt
 #
 /shells
 
