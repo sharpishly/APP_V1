@@ -1,0 +1,23 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/sharpishly.conf:/etc/nginx/conf.d/default.conf
+      - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
+      - /etc/letsencrypt:/etc/letsencrypt
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  app-network:
+    driver: bridge
