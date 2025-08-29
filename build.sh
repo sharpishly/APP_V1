@@ -207,6 +207,7 @@ HOSTS_FILE="/etc/hosts"
 HOSTNAMES=(
   "sharpishly.dev"
   "dev.sharpishly.dev"
+  "docs.sharpishly.dev"
   "live.sharpishly.dev"
   "py.sharpishly.dev"
 )
