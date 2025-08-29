@@ -10,8 +10,12 @@ services:
     volumes:
       # Mount production code
       - ./sharpishly.com:/var/www/app/sharpishly.com
-      # Mount development code
+      # Mount PHP development code
       - ./dev.sharpishly.com:/var/www/app/dev.sharpishly.com
+      # Mount Python MVC development code
+      - ./python_mvc:/var/www/app/python_mvc
+      # Mount Python Standalone development code
+      - ./python_app:/var/www/app/python_app
     environment:
       - DB_HOST=db
       - DB_USER=sharpishly_user
@@ -37,6 +41,7 @@ services:
     restart: unless-stopped
     ports:
       - "80:80" # Removed 443 since SSL is disabled
+      - "443:443"
     volumes:
       # Nginx vhost configs (merged sharpishly.conf for prod + dev)
       - ./nginx:/etc/nginx/conf.d
@@ -44,6 +49,9 @@ services:
       - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
       # Development public directory
       - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
+      # Development SSL Certs
+      - ./certs/sharpishly.dev.crt:/etc/nginx/ssl/sharpishly.dev.crt:ro
+      - ./certs/sharpishly.dev.key:/etc/nginx/ssl/sharpishly.dev.key:ro
     networks:
       - app-network
     depends_on:
