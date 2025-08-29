@@ -48,7 +48,9 @@ services:
       # Production public directory
       - ./sharpishly.com/website/public:/var/www/app/sharpishly.com/website/public
       # Development public directory
-      - ./dev.sharpishly.com/website/public:/var/www/app/dev.sharpishly.com/website/public
+      - ./dev.sharpishly.com/website/:/var/www/app/dev.sharpishly.com/website/
+      # Development public directory
+      - ./debug/:/var/www/app/debug/
       # Development SSL Certs
       - ./certs/sharpishly.dev.crt:/etc/nginx/ssl/sharpishly.dev.crt:ro
       - ./certs/sharpishly.dev.key:/etc/nginx/ssl/sharpishly.dev.key:ro
