@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Report - sharpishly.dev</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Debug Report - sharpishly.dev</h1>
+    <h2>Generated: Fri Aug 29 12:04:59 PM BST 2025</h2>
+<h2>SSL Certificate Files</h2><pre>
+total 12
+-rw-r--r-- 1 joe90 joe90 1009 Aug 29 11:23 sharpishly.dev.crt
+-rw-rw-r-- 1 joe90 joe90  899 Aug 29 11:23 sharpishly.dev.csr
+-rw------- 1 joe90 joe90 1704 Aug 29 11:23 sharpishly.dev.key
+</pre>
+<h2>Port Usage</h2><pre>
+Ports 80 and 443 are free ✅
+</pre>
+<h2>Nginx Config Verification</h2><pre>
+</pre>
+<h2>Container Status</h2><pre>
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                                     PORTS                                                                          NAMES
+bd461ffead06   nginx:latest   "/docker-entrypoint.…"   17 seconds ago   Up Less than a second (health: starting)   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp   nginx_proxy
+4cfef7468b79   app-php        "docker-php-entrypoi…"   17 seconds ago   Up Less than a second (health: starting)   9000/tcp                                                                       php_fpm
+7372b1279f60   mysql:8.0      "docker-entrypoint.s…"   17 seconds ago   Up 16 seconds (healthy)                    0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp                         app-db-1
+</pre>
+<h2>Nginx Logs (Last 50 Lines)</h2><pre>
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+</pre>
+<h2>Nginx Config Test</h2><pre>
+</pre>
+<h2>PHP-FPM Connectivity Test</h2><pre>
