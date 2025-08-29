@@ -1,0 +1,1448 @@
+\chapter{READ ME}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README}{}\label{md_dev_8sharpishly_8com_2website_2README}\index{READ ME@{READ ME}}
+\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md5}%
+\Hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md5}%
+ \hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md6}{}\doxysection{\texorpdfstring{Todo}{Todo}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md6}
+
+\begin{DoxyItemize}
+\item Create new repo by copying this repo delete all .git files then init folder
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md7}{}\doxysection{\texorpdfstring{Install}{Install}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md7}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md8}{}\doxysection{\texorpdfstring{Hosts}{Hosts}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md8}
+
+\begin{DoxyItemize}
+\item \href{http://domain/deploy/index}{\texttt{ http\+://domain/deploy/index}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md9}{}\doxysection{\texorpdfstring{Databases}{Databases}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \href{http://domain/init/index}{\texttt{ http\+://domain/init/index}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md10}{}\doxysection{\texorpdfstring{Test pages to play around with}{Test pages to play around with}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md10}
+
+\begin{DoxyItemize}
+\item \href{http://domain/test/index}{\texttt{ http\+://domain/test/index}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md11}{}\doxysection{\texorpdfstring{Shared assets}{Shared assets}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md11}
+
+\begin{DoxyItemize}
+\item \href{http://domain/shared/index}{\texttt{ http\+://domain/shared/index}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md12}{}\doxysection{\texorpdfstring{Imap}{Imap}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md12}
+
+\begin{DoxyItemize}
+\item sudo apt-\/get install php7.\+0-\/imap
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md13}{}\doxysection{\texorpdfstring{Whitelist Ips}{Whitelist Ips}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md13}
+
+\begin{DoxyItemize}
+\item MSN JMRP \href{https://sendersupport.olc.protection.outlook.com/snds/data.aspx}{\texttt{ https\+://sendersupport.\+olc.\+protection.\+outlook.\+com/snds/data.\+aspx}}
+\item MSN SNDS \href{https://sendersupport.olc.protection.outlook.com/snds/}{\texttt{ https\+://sendersupport.\+olc.\+protection.\+outlook.\+com/snds/}}
+\item MSN Support \href{https://support.microsoft.com/en-us/supportrequestform/8ad563e3-288e-2a61-8122-3ba03d6b8d75}{\texttt{ https\+://support.\+microsoft.\+com/en-\/us/supportrequestform/8ad563e3-\/288e-\/2a61-\/8122-\/3ba03d6b8d75}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md14}{}\doxysection{\texorpdfstring{bake}{bake}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ ./bake.sh\ settings\ Settings}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md15}{}\doxysection{\texorpdfstring{Return specific fields in records}{Return specific fields in records}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'migrate\_project\_details',}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres,}
+\DoxyCodeLine{\ \ \ \ 'field\_names'=>array('name','description')}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md16}{}\doxysubsection{\texorpdfstring{Sandbox db set in Db class}{Sandbox db set in Db class}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ sandbox()\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ if\ (\$\_SERVER['HTTP\_HOST']\ ===\ 'sandbox.typekoce.com')\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\$this\ -\/>\ result['password']\ =\ 'r00taccess';}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$this\ -\/>\ result['password']\ =\ '';}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \}//die();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md17}{}\doxysection{\texorpdfstring{Note}{Note}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md17}
+
+\begin{DoxyItemize}
+\item The route paramater in \$data\mbox{[}\textquotesingle{}slug\textquotesingle{}\mbox{]} may cause issues with array variable.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md18}{}\doxysubsection{\texorpdfstring{Sub Modules}{Sub Modules}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md18}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Note clone into build \& remove .git folders \& move to lib \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Office 365
+\begin{DoxyItemize}
+\item \href{https://github.com/Typekoce/Groups-API-Office-Add-in-PHP-Sample.git}{\texttt{ https\+://github.\+com/\+Typekoce/\+Groups-\/\+API-\/\+Office-\/\+Add-\/in-\/\+PHP-\/\+Sample.\+git}}
+\end{DoxyItemize}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Facebook \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Note not using submodules
+\begin{DoxyItemize}
+\item git submodule add \href{https://github.com/facebook/php-graph-sdk.git}{\texttt{ https\+://github.\+com/facebook/php-\/graph-\/sdk.\+git}} /app/lib/facebook
+\end{DoxyItemize}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Facebook call back
+\begin{DoxyItemize}
+\item \href{http://domain/signin/update}{\texttt{ http\+://domain/signin/update}}
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md19}{}\doxysubsection{\texorpdfstring{Admin Mode}{Admin Mode}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ admin\_before(\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$id\ =\ array('bereavement','id');}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$userid\ =\ \$this-\/>session-\/>read(\$id);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ if(\$userid\ ==\ 1)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data\ =\ \$this-\/>admin\_before\_flash(\$data,\ \$options);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ admin\_before\_flash(\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$id\ =\ \$data['id'];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data['slug']['route']['model'],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'read',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$id}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this-\/>surl(\$url);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$options\ =\ \$this\ -\/>\ options(\$options,\ 'protocol',\ 'HTTPS');}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this-\/>html-\/>link(\$url,\$options);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'href'=>\$url,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //'target'=>'\_blank'}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ \$this-\/>attributes(\$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$options\ =\ \$this-\/>options(\$options,\ 'attr',\ \$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$txt\ =\ 'You\ are\ in\ administrator\ mode';}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$msg\ =\ \$this-\/>html-\/>hyper(\$txt,\$options);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$flash\ =\ 'info';}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this-\/>flash(\$data,\$msg,\$flash);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md20}{}\doxysubsection{\texorpdfstring{Git Remove submodule}{Git Remove submodule}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md20}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rm\ -\/R\ path/to/submodule}
+\DoxyCodeLine{}
+\DoxyCodeLine{Edit:\ }
+\DoxyCodeLine{./git/config}
+\DoxyCodeLine{.gitmodules}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md21}{}\doxysubsection{\texorpdfstring{Js\+MVC setup}{JsMVC setup}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md21}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Loading \$data via Java\+Script 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>otherworld(\$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'dynabase',\ '/theme/businessplan/js/');}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\$models,'home','dynamic',\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'dynaroute',\ array('app'));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\$models,'home','dynamics',\$options);}
+
+\end{DoxyCode}
+ \hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md22}{}\doxysubsection{\texorpdfstring{Js\+MVC pass attional data}{JsMVC pass attional data}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md22}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ otherworld(\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$datas\ =\ array();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$datas\ =\ \$this-\/>sdata(\$datas,\ 'route',\ 'simple');}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this-\/>sdata(\$data,\ \_\_FUNCTION\_\_,\ \$datas);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Controller
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ cont\ =\ \{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{cont\ =\ app.control('dashboard',cont);}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.controller(cont);}
+\DoxyCodeLine{}
+\DoxyCodeLine{model\ =\ app.model('dashboard',model);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Model 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{model.max\ =\ 20;}
+\DoxyCodeLine{}
+\DoxyCodeLine{model.selects\ =\ [];}
+\DoxyCodeLine{}
+\DoxyCodeLine{model.main\ =\ function()\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\item App 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ app\ =\ \{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.data\ =\ JSON.parse('mdata');}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.model\ =\ function(name,model)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ model.model\ =\ name;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ model.main();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ model;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.control\ =\ function(name,cont)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ cont.directive\ =\ name;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ cont;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.controller\ =\ function(con)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.main\ =\ function()\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ prettyBug(app);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{window.onload\ =\ function()\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ app.main();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md23}{}\doxysubsection{\texorpdfstring{Thead}{Thead}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md23}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ thead(\$data,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ array(\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'Type',\ 'icon'\ =>\ 'file-\/text'),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'Title',\ 'icon'\ =>\ 'file-\/text'),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'Date',\ 'icon'\ =>\ 'file-\/text'),\ }
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this\ -\/>\ spartial(\$data,\ \_\_FUNCTION\_\_,\ \$rs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md24}{}\doxysubsection{\texorpdfstring{Conditions passed to \$data array}{Conditions passed to \$data array}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md24}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Load method via model call
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'conditions',\ \_\_FUNCTION\_\_);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>conditions(\$conditions,\ \$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$models['picturebox']-\/>conditions(\$conditions,\ \$data,\ \$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md25}{}\doxysubsection{\texorpdfstring{Git\+Hub setup}{GitHub setup}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md25}
+
+\begin{DoxyItemize}
+\item Change from HTTP to SSH 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ remote\ set-\/url\ origin\ git@github.com:<Username>/<Project>.git}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md26}{}\doxysubsection{\texorpdfstring{Generic Request Object}{Generic Request Object}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{*\ Initial\ abstraction\ for\ making\ PUT,\ POST,\ GET,\ ETC\ Requests}
+\DoxyCodeLine{}
+\DoxyCodeLine{OpengraphModel-\/>chew(\$data,\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md27}{}\doxysubsection{\texorpdfstring{Mysql reset priveleges}{Mysql reset priveleges}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md27}
+
+\begin{DoxyItemize}
+\item If Error 2003 try changing from localhost to 127.\+0.\+0.\+1
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ sudo\ mysql\ -\/u\ root\ \#\ I\ had\ to\ use\ "{}sudo"{}\ since\ is\ new\ installation}
+\DoxyCodeLine{}
+\DoxyCodeLine{mysql>\ USE\ mysql;}
+\DoxyCodeLine{mysql>\ UPDATE\ user\ SET\ plugin='mysql\_native\_password'\ WHERE\ User='root';}
+\DoxyCodeLine{mysql>\ FLUSH\ PRIVILEGES;}
+\DoxyCodeLine{mysql>\ exit;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$\ service\ mysql\ restart}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md28}{}\doxysubsection{\texorpdfstring{Nginx Set-\/\+Up}{Nginx Set-Up}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{server\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ listen\ 80;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ root\ /var/www/typekoce/public/;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ index\ index.html\ index.php;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ server\_name\ sandbox.typekoce.com;\ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ conditional\ rewrite\ for\ zee\ pretty\ URLS}
+\DoxyCodeLine{\ \ \ \ if\ (!-\/e\ \$request\_filename)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ rewrite\ \string^/(.+)\$\ /index.php?url=\$1\ last;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ break;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Serve\ cakePHP\ files}
+\DoxyCodeLine{\ \ \ \ location\ \string~\ \(\backslash\).php\$\ \{}
+\DoxyCodeLine{\ \ \ \ \#\ With\ php5-\/fpm:}
+\DoxyCodeLine{\ \ \ \ \#\#\ UPDATE\ PHP\ VERSION\#\#}
+\DoxyCodeLine{\ \ \ \ fastcgi\_pass\ unix:/run/php/php7.2-\/fpm.sock;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_index\ index.php;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_param\ SCRIPT\_FILENAME\ \$document\_root\$fastcgi\_script\_name;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fastcgi\_read\_timeout\ 180;}
+\DoxyCodeLine{\ \ \ \ include\ fastcgi\_params;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ location\ \string~\ \(\backslash\).php/\ \{}
+\DoxyCodeLine{\ \ \ \ include\ fastcgi\_params;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_split\_path\_info\ \string^(.+\(\backslash\).php)(/.*)\$;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_param\ PATH\_INFO\ \$fastcgi\_path\_info;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_param\ PATH\_TRANSLATED\ \$document\_root\$fastcgi\_path\_info;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_param\ SCRIPT\_FILENAME\ \$document\_root\$fastcgi\_script\_name;}
+\DoxyCodeLine{\ \ \ \ fastcgi\_pass\ unix:/var/run/php5-\/fpm.sock;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Zee\ favicon}
+\DoxyCodeLine{\ \ \ \ location\ =\ /favicon.ico\ \{}
+\DoxyCodeLine{\ \ \ \ log\_not\_found\ off;\ \ }
+\DoxyCodeLine{\ \ \ \ access\_log\ off;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Moar\ robots\ pl0x}
+\DoxyCodeLine{\ \ \ \ location\ =\ /robots.txt\ \{}
+\DoxyCodeLine{\ \ \ \ log\_not\_found\ off;}
+\DoxyCodeLine{\ \ \ \ access\_log\ off;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ redirect\ server\ error\ pages\ to\ the\ static\ page\ /50x.html}
+\DoxyCodeLine{\ \ \ \ error\_page\ 500\ 502\ 503\ 504\ /50x.html;}
+\DoxyCodeLine{\ \ \ \ location\ =\ /50x.html\ \{}
+\DoxyCodeLine{\ \ \ \ root\ /usr/share/nginx/html;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\ \ \ \ \#\ deny\ access\ to\ certain\ none\ web\ files}
+\DoxyCodeLine{\ \ \ \ location\ \string~\ /(\(\backslash\).ht|\(\backslash\).user.ini|\(\backslash\).git|\(\backslash\).hg|\(\backslash\).bzr|\(\backslash\).svn)\ \{}
+\DoxyCodeLine{\ \ \ \ deny\ all;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ serve\ zee\ static\ content\ fast}
+\DoxyCodeLine{\ \ \ \ location\ \string~\ \string^/(img|cjs|ccss)/\ \{}
+\DoxyCodeLine{\ \ \ \ access\_log\ off;}
+\DoxyCodeLine{\ \ \ \ expires\ 7d;}
+\DoxyCodeLine{\ \ \ \ add\_header\ Cache-\/Control\ public;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md29}{}\doxysubsection{\texorpdfstring{How to use this framework}{How to use this framework}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md29}
+
+\begin{DoxyItemize}
+\item When testing session close down browser
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md30}{}\doxysection{\texorpdfstring{Automatic page creation}{Automatic page creation}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md30}
+1.
+
+
+\begin{DoxyItemize}
+\item Make these directories writable
+\item app/models
+\item app/controllers
+\item app/views
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item To auto-\/create new page go to \href{http://yourdomain.com/scaffold/index/example}{\texttt{ http\+://yourdomain.\+com/scaffold/index/example}}
+\item This will automatically build new pages via the scaffold functionality.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Scaffold pages
+\item index
+\item create
+\item read
+\item update
+\item delete
+\item modify
+\item update
+\item login
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Scaffold library \href{http://sandbox.typekoce.com/scaffold/library/baki}{\texttt{ http\+://sandbox.\+typekoce.\+com/scaffold/library/baki}}
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Orders.\+php saved to app/lib/baki
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md31}{}\doxysubsection{\texorpdfstring{Template page}{Template page}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md31}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ sample(\$data,\ \$models,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ if\ (isset(\$data['directive'])\ \&\&\ \$data['directive']\ ===\ \_\_FUNCTION\_\_)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$h1\ =\ \_\_FUNCTION\_\_;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data\ =\ \$this\ -\/>\ sheader(\$data,\ 'title',\ "{}cv"{});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data\ =\ \$this\ -\/>\ template(\$data,\ 'h1',\ \$h1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$h2\ =\ 'Enter\ contact\ details\ below';}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data\ =\ \$this\ -\/>\ template(\$data,\ 'h2',\ \$h2);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\$data\ =\ \$this\ -\/>\ nav(\$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ //\$data\ =\ \$this\ -\/>\ side(\$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md32}{}\doxysubsection{\texorpdfstring{Breadcrumbs}{Breadcrumbs}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$bread\ =\ array(}
+\DoxyCodeLine{\ \ \ \ array('title'=>'add','url'=>array('companies','add'))}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'breadcrumbs',\ \$bread);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>breadcrumbs(\$data,\ \$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md33}{}\doxysubsection{\texorpdfstring{Breadcrumb method}{Breadcrumb method}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ breadcrumbs(\$data,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ array(\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'home',\ 'url'=>array('profile','index')),\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'companies','url'=>array('companies','index'))}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ \$this-\/>bakers(\$rs,\ \$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ \$this-\/>bread(\$rs,\$data,\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this\ -\/>\ spartial(\$data,\ \_\_FUNCTION\_\_,\ \$rs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ bakers(\$rs,\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$e\ =\ 'breadcrumbs';}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ if(isset(\$options[\$e]))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$rs\ =\ array\_merge(\$rs,\$options[\$e]);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$rs;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ bread(\$rs,\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$counter\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ while(\$counter<count(\$rs))\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$m\ =\ \$rs[\$counter];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$m\ =\ \$this-\/>crumbs(\$m,\$data,\$options);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$rs[\$counter]\ =\ \$m;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$counter++;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$rs;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ crumbs(\$m,\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$el\ =\ \_\_FUNCTION\_\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this-\/>surl(\$m['url']);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this-\/>html-\/>link(\$url);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'href'=>\$url,}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ \$this-\/>attributes(\$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$m[\$el]\ =\ \$attr;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$m;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md34}{}\doxysubsection{\texorpdfstring{Add session authentication to page}{Add session authentication to page}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodey(\$data,\ \$models,\ 'documents',\ 'powerpack',\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md35}{}\doxysubsection{\texorpdfstring{Add to Controller}{Add to Controller}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md35}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$models\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'home'\ =>\ 'HomeModel',}
+\DoxyCodeLine{\ \ \ \ 'profile'=>'ProfileModel',}
+\DoxyCodeLine{\ \ \ \ 'documents'=>'DocumentsModel'}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md36}{}\doxysubsection{\texorpdfstring{Add navigation and side bar}{Add navigation and side bar}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md36}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\ \$models,\ 'profile','nav',\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\ \$models,\ 'profile','side',\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\ \$models,\ 'profile','admin',\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md37}{}\doxysubsection{\texorpdfstring{Db total records}{Db total records}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md37}
+\texorpdfstring{$\ast$}{*}\+Note remember to add relevant models to controller
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ total(\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$key\ =\ \_\_FUNCTION\_\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$value\ =\ "{}"{};}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'table'=>'xmen\_users'}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ \$this-\/>db-\/>total(\$conditions);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this-\/>sdata(\$data,\ \$key,\ \$value);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md38}{}\doxysection{\texorpdfstring{Db SUM() functionality}{Db SUM() functionality}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'horizon\_bereavement\_expenses',}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres,}
+\DoxyCodeLine{\ \ \ \ 'sum'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'col'=>'amount',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'name'=>'total'}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md39}{}\doxysubsection{\texorpdfstring{Load conditions from Init\+Model}{Load conditions from InitModel}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md39}
+\texorpdfstring{$\ast$}{*}\+Note remember to add relevant models to controller
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'collar',\ 'xmen\_portfolio');}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$data\ =\ \$models['scrape']-\/>table(\$data,\$models,\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md40}{}\doxysubsection{\texorpdfstring{sform}{sform}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md40}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ sform(\$data,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ array('signin',\ 'create');}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ //\$url\ =\ \$this\ -\/>\ normal(\$url,\ \$data,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this\ -\/>\ surl(\$url);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$options\ =\ \$this\ -\/>\ options(\$options,\ 'protocol',\ 'HTTPS');}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$url\ =\ \$this\ -\/>\ html\ -\/>\ link(\$url,\ \$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ array('method'\ =>\ 'POST',\ 'id'\ =>\ \_\_FUNCTION\_\_,\ 'name'\ =>\ \_\_FUNCTION\_\_,\ 'class'\ =>\ "{}form-\/signin"{},\ 'action'\ =>\ \$url);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ \$this\ -\/>\ attributes(\$attr);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this\ -\/>\ template(\$data,\ \_\_FUNCTION\_\_,\ \$attr);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md41}{}\doxysubsection{\texorpdfstring{File input Attribute method}{File input Attribute method}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md41}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Use the default attribute to pass value without key pair
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ pict(\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'name'=>\_\_FUNCTION\_\_,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'type'=>'file',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'id'=>\_\_FUNCTION\_\_,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'class'=>\_\_FUNCTION\_\_,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'data-\/type'=>\_\_FUNCTION\_\_,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'default'=>'multiple'}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ \$this-\/>attributes(\$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this-\/>template(\$data,\ \_\_FUNCTION\_\_,\ \$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md42}{}\doxysubsection{\texorpdfstring{sform url}{sform url}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$normal\ =\ array('kuwahara','resume',\$data['id']);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'normal',\$normal);}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ normal(\$url,\ \$data,\ \$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ if(isset(\$options[\_\_FUNCTION\_\_]))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$url\ =\ \$options[\_\_FUNCTION\_\_];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$url;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md43}{}\doxysubsection{\texorpdfstring{Alias partial element functionality}{Alias partial element functionality}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ alias(\$m,\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ foreach\ (\$m\ as\ \$key\ =>\ \$value)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if(isset(\$m['alias'][\$key]))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \$m[\$key]\ =\ \$m['alias'][\$key];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$m;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md44}{}\doxysubsection{\texorpdfstring{Url attributes}{Url attributes}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md44}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$url\ =\ array(}
+\DoxyCodeLine{\ \ 'profile',}
+\DoxyCodeLine{\ \ 'contacts'}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$url\ =\ \$this-\/>surl(\$url);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$url\ =\ \$this-\/>html-\/>link(\$url,\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$attr\ =\ array(}
+\DoxyCodeLine{\ \ 'href'=>\$url}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$attr\ =\ \$this-\/>attributes(\$attr);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md45}{}\doxysubsection{\texorpdfstring{Flash with url}{Flash with url}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md45}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ portfolio\_flash\_share(\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$id\ =\ \$this-\/>session-\/>read(array('portfolio\_resolution'));}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ if(isset(\$id)\ \&\&\ !empty(\$id))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$url\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'profile',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'portfolio',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'guest',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \$id}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$url\ =\ \$this-\/>surl(\$url);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$url\ =\ \$this-\/>html-\/>link(\$url);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$attr\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'href'=>\$url,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'target'=>'\_blank'}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$attr\ =\ \$this-\/>attributes(\$attr);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$options\ =\ \$this-\/>options(\$options,\ 'attr',\ \$attr);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$txt\ =\ 'Share\ your\ portfolio\ with\ this\ link';}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$msg\ =\ \$this-\/>html-\/>hyper(\$txt,\$options);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$flash\ =\ 'info';}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$data\ =\ \$this-\/>flash(\$data,\$msg,\$flash);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md46}{}\doxysubsection{\texorpdfstring{CSS Page Style}{CSS Page Style}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md46}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodey(\$data,\ \$models,\ 'talktoshirley',\ 'pagestyle',\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md47}{}\doxysection{\texorpdfstring{Load CSS}{Load CSS}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md47}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HTTP://sandbox.typekoce.com/resources/cssstyle/font-\/awesome-\/4.7.0/css/font-\/awesome.css}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md48}{}\doxysubsection{\texorpdfstring{Facebook response}{Facebook response}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md48}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{https://typekoce.com/signin/update?code=AQAXrA9-\/grGtEoTtRIaVMHDGdlokmYRdBiUM67CT0aSL-\/iH8Jvj0oxyXHnvsufKibrLwRKEz9LdKpqIPjYb7BwIbuk3gGDM13td5-\/Owb\_t\_9NNOHcnrF0XNGcszJsV07nBcAcG70m4fVh1KP-\/X565q39UcJOrQhy3kBcmxoONRKAyGySlMg9fkNp-\/C1pPCyip9NaqgjKYY2dEaJH\_ZIvBJU1MA6Bg69plnp55rMTzCSkJc-\/poW57QHI2XO6WchP47ZSSQe2PG7tML\_JEs-\/Ans1t6Sz-\/l-\/GBIieNQmr9qDMF6ikjNNXE-\/CNEMRHNPfd33ByQ\&state=d9ddc1f23a0bc0c252d38023998aca51\#\_=\_}
+\DoxyCodeLine{}
+\DoxyCodeLine{https://www.facebook.com/v2.10/dialog/oauth?client\_id=1000275760363846\&state=618629aeef8c3f06b0fd5e3393db910f\&response\_type=code\&sdk=php-\/sdk-\/5.7.0\&redirect\_uri=HTTPS\%3A\%2F\%2Ftypekoce.com\%2Fsignin\%2Fupdate\&scope=email}
+\DoxyCodeLine{}
+\DoxyCodeLine{*\ Cosmina\ is\ great!}
+\DoxyCodeLine{}
+\DoxyCodeLine{redirect\_uri=HTTPS://typekoce.com/signin/update\&scope=email}
+\DoxyCodeLine{}
+\DoxyCodeLine{*\ McNair}
+\DoxyCodeLine{}
+\DoxyCodeLine{https://dev.typekoce.com/signin/update\&scope=email}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md49}{}\doxysubsection{\texorpdfstring{set flash}{set flash}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md49}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>flash(\$data,'Login\ error','danger');}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md50}{}\doxysubsection{\texorpdfstring{Setting options}{Setting options}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md50}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Note overwriting the same key may have unpredictable results\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,'foo','bar');}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md51}{}\doxysubsection{\texorpdfstring{Creating a ssl form}{Creating a ssl form}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md51}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Note no remote links on ssl page ie\+: \href{http:getbootstrap.com/}{\texttt{ http\+:getbootstrap.\+com/}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,'protocol','HTTPS');}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$url\ =\ \$this-\/>html-\/>link('model/action/'\$options);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md52}{}\doxysubsection{\texorpdfstring{Adding attributes}{Adding attributes}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md52}
+
+\begin{DoxyItemize}
+\item Remember to pass the 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options['form']\ =\ TRUE;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$attr\ =\ \$this-\/>attributes(\$attr,\$options);}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md53}{}\doxysubsection{\texorpdfstring{Adding custom route}{Adding custom route}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md53}
+
+\begin{DoxyItemize}
+\item Note to by pass app routing call controller home and passthrough method
+\item Add to app/core/\+Routes.\+php 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$this-\/>domain('sandbox.typekoce.com',\ 'signin',\ 'read',\ 'read');}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md54}{}\doxysubsection{\texorpdfstring{Filtering partials}{Filtering partials}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md54}
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Pass option 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$options\ =\ \$this-\/>options(\$options,\ 'impression',\ 'businessplangoals');}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ impression(\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$key\ =\ \$options[\_\_FUNCTION\_\_];}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ \$this-\/>gpartial(\$data,\$key);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$counter\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ while(\$counter<count(\$rs))\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$m\ =\ \$rs[\$counter];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ new\ dBug(\$m);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$counter++;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this-\/>repartial(\$data,\$key,\$rs);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Atttributes for partial 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ businessattr(\$m,\$data,\$options)\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$key\ =\ \_\_FUNCTION\_\_;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'data-\/type'=>\$key}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$attr\ =\ \$this-\/>attributes(\$attr);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$m[\$key]\ =\ \$attr;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$m;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md55}{}\doxysubsection{\texorpdfstring{Loading images as a resource}{Loading images as a resource}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md55}
+
+\begin{DoxyItemize}
+\item Place image in theme folder then use the url starting with resources/image
+\item This will request the image via the resources/image controllers
+\item Functionality can be created to track images in emails, pdf, etc.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$logo\ =\ \$this-\/>html-\/>link('resources/image/bar480/images/hex.png');}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md56}{}\doxysubsection{\texorpdfstring{Controller}{Controller}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md56}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ index(\$id\ =\ '')\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$controller\ =\ new\ Controller();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$data\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'id'=>\$id,}
+\DoxyCodeLine{\ \ \ \ 'directive'=>\_\_FUNCTION\_\_}
+\DoxyCodeLine{\ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$data\ =\ \$controller-\/>slug(\$data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$model\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \_\_CLASS\_\_=>\_\_CLASS\_\_\ .\ 'Model',}
+\DoxyCodeLine{\ \ \ \ 'home'=>'HomeModel'}
+\DoxyCodeLine{\ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$models\ =\ \$controller-\/>model(\$model);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$data\ =\ \$models[\_\_CLASS\_\_]-\/>init(\$data,\$models);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$controller-\/>view(\_\_CLASS\_\_\ .\ '/'\ .\ \_\_FUNCTION\_\_,\$data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md57}{}\doxysubsection{\texorpdfstring{Model}{Model}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md57}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ index(\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ if(isset(\$data['directive'])\ \&\&\ \$data['directive']\ ===\ \_\_FUNCTION\_\_)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ return\ \$data;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md58}{}\doxysubsection{\texorpdfstring{Bind all data to \$data array}{Bind all data to \$data array}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md58}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>sdata(\$data,'w',40);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md59}{}\doxysubsection{\texorpdfstring{loading libraries}{loading libraries}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md59}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$file\ =\ 'phpseclib/Net/SSH2.php';}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$this-\/>lib(\$file);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$ssh\ =\ new\ Net\_SSH2(\$data['id']);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md60}{}\doxysubsection{\texorpdfstring{controller set-\/up for loading multiple models}{controller set-up for loading multiple models}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md60}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$model\ =\ array(}
+\DoxyCodeLine{\ \ \_\_CLASS\_\_=>\_\_CLASS\_\_\ .\ 'Model',}
+\DoxyCodeLine{\ \ 'home'=>'HomeModel',}
+\DoxyCodeLine{\ \ 'profile'=>'ProfileModel'}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md61}{}\doxysubsection{\texorpdfstring{loading model functions}{loading model functions}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md61}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$data\ =\ \$this-\/>smodelfn(\$data,\$models,'profile','gateway');}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md62}{}\doxysubsection{\texorpdfstring{loading model data from another model}{loading model data from another model}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md62}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ gdatas(\$data,\$models,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$datas\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'id'=>1,}
+\DoxyCodeLine{\ \ \ \ 'directive'=>'cv',}
+\DoxyCodeLine{\ \ \ \ \_\_FUNCTION\_\_=>\$data}
+\DoxyCodeLine{\ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$datas\ =\ \$models['home']-\/>init(\$datas,\$models,\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \$data\ =\ \$this-\/>sdata(\$data,\_\_FUNCTION\_\_,\$datas);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md63}{}\doxysubsection{\texorpdfstring{Creating partial}{Creating partial}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md63}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ plans(\$data,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ array(\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'Update',\ 'icon'\ =>\ 'file'),\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array('title'\ =>\ 'Products',\ 'icon'\ =>\ 'shopping-\/cart')}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this\ -\/>\ spartial(\$data,\ \_\_FUNCTION\_\_,\ \$rs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md64}{}\doxysubsection{\texorpdfstring{Processing partial}{Processing partial}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md64}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ plans(\$data,\ \$options)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ array(\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'title'\ =>\ 'Professional\ Subscriptions',\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'modify'\ =>\ 'modify',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'status'=>'active',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'link'=>''}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ),\ }
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$rs\ =\ \$this-\/>button(\$rs,\$data,\$options);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$data\ =\ \$this\ -\/>\ spartial(\$data,\ \_\_FUNCTION\_\_,\ \$rs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$data;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ but(\$m,\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$el\ =\ \_\_FUNCTION\_\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ new\ dBug(\$m);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$m;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{public\ function\ button(\$rs,\$data,\$options)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$counter\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ while(\$counter<count(\$rs))\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$m\ =\ \$rs[\$counter];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$m\ =\ \$this-\/>but(\$m,\$data,\$options);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$rs[\$counter]\ =\ \$m;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$counter++;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ return\ \$rs;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md65}{}\doxysubsection{\texorpdfstring{Save Many}{Save Many}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md65}
+
+\begin{DoxyItemize}
+\item Save many function
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \$conditions\ =\ array();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$date\ =\ \$this-\/>timewarp-\/>now();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \$fields\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'Chorlton\ Cobblers'=>'Tea\ \&amp;\ Sticky\ shoes',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'Chorlton\ Ye\ Olde\ Cake\ Shoppe'=>'Tea\ \&amp;\ Sticky\ Cakes',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'Chorlton\ Ye\ Olde\ Computer\ Repair'=>'New\ fanglled\ technology'}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ foreach\ (\$fields\ as\ \$title\ =>\ \$description)\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$save\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'title'\ =>\ \$title,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'description'\ =>\ \$description,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'date'=>\$date,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'status'=>1}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$conditions[]\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'table'\ =>\ \$data['tbl\_businesses'],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'save'\ =>\ \$save,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ new\ dBug(\$rs\ =\ \$this-\/>db-\/>savem(\$conditions));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$this-\/>db-\/>savem(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md66}{}\doxysubsection{\texorpdfstring{Update data}{Update data}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md66}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$update\ =array(}
+\DoxyCodeLine{\ \ \ \ 'status'=>1}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ 'table'=>'xmen\_users',}
+\DoxyCodeLine{\ \ 'update'=>\$update,}
+\DoxyCodeLine{\ \ 'where'=>array(}
+\DoxyCodeLine{\ \ \ \ 'id'=>\$this-\/>session-\/>read(array('profile','id'))}
+\DoxyCodeLine{\ \ )}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{new\ dBug(\$this-\/>db-\/>update(\$conditions));}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md67}{}\doxysubsubsection{\texorpdfstring{Multiple Update}{Multiple Update}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md67}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\$counter\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{while(\$counter<count(\$rs))\{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$status\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ if(\$rs[\$counter]['id']\ ===\ \$data['id'])\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$status\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$condition\ =\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'table'=>\$data['tbl'],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'update'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'status'=>\$status}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'where'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'id'=>\$rs[\$counter]['id']}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$conditions[]\ =\ \$condition;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \$counter++;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{new\ dBug(\$res\ =\ \$this-\/>db-\/>mupdate(\$conditions));}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md68}{}\doxysubsection{\texorpdfstring{Find like}{Find like}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md68}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>\$data['tbl'],}
+\DoxyCodeLine{\ \ \ \ 'like'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'col'=>'title',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'val'=>\$\_POST['search']}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$rs\ =\ \$this-\/>db-\/>find(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md69}{}\doxysubsection{\texorpdfstring{Find data}{Find data}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'\ =>\ 'xmen\_cv',\ }
+\DoxyCodeLine{\ \ \ \ 'where'\ =>\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'col'\ =>\ 'content',\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'val'\ =>\ \$this\ -\/>\ db\ -\/>\ string(\$uid)}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$rs\ =\ \$this\ -\/>\ db\ -\/>\ find(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md70}{}\doxysubsection{\texorpdfstring{Find data with specific field names}{Find data with specific field names}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$wheres\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'id'=>\$data['id']}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'migrate\_lesson\_plans',}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres,}
+\DoxyCodeLine{\ \ \ \ 'field\_names'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'aims',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'aims\_1'}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md71}{}\doxysubsection{\texorpdfstring{Find data with where and}{Find data with where and}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md71}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$wheres\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'date'=>date("{}Y-\/m-\/d\ h:i:s"{},\ \$d),}
+\DoxyCodeLine{\ \ \ \ 'sender'=>\$m['sender']}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'xmen\_email\_responder',}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$rs\ =\ \$this-\/>db-\/>find(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md72}{}\doxysubsection{\texorpdfstring{Find data with and or}{Find data with and or}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md72}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$wheres\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'or'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'status'=>array(2),}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ 'status'=>1}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'migrate\_lesson\_todo',}
+\DoxyCodeLine{\ \ \ \ 'order'=>array('id'=>'desc'),}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md73}{}\doxysubsection{\texorpdfstring{Find data with json decode}{Find data with json decode}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md73}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$wheres\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'date'=>date("{}Y-\/m-\/d\ h:i:s"{},\ \$d),}
+\DoxyCodeLine{\ \ \ \ 'sender'=>\$m['sender']}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'xmen\_email\_responder',}
+\DoxyCodeLine{\ \ \ \ 'wheres'=>\$wheres,,}
+\DoxyCodeLine{\ \ \ \ 'json'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'pref'=>'log'}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$rs\ =\ \$this-\/>db-\/>find(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md74}{}\doxysubsection{\texorpdfstring{Find data with field alias}{Find data with field alias}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md74}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'\ =>\ 'xmen\_upload',\ }
+\DoxyCodeLine{\ \ \ \ 'where'\ =>\ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'col'\ =>\ 'folder',\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'val'\ =>\ \$this\ -\/>\ db\ -\/>\ string(\$uid)}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ 'as'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'course'=>'title',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'accreditation'=>'level'}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$rs\ =\ \$this\ -\/>\ db\ -\/>\ find(\$conditions);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md75}{}\doxysubsection{\texorpdfstring{Find data INNER JOIN example}{Find data INNER JOIN example}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md75}
+
+\begin{DoxyItemize}
+\item Add line of code after consitions 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ \$this-\/>recordjoins(\$data,\ \$conditions,\ \$options);}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{public\ function\ recordjoins(\$data,\$conditions,\$options)\{}
+\DoxyCodeLine{\ \ \ \ //@TODO:\ Remove\ condition\ if\ not\ needed!}
+\DoxyCodeLine{\ \ \ \ if(!empty(\$data['bizid'])\ \&\&\ !empty(\$data['page']))\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$conditions['joins']=array(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'type'=>'INNER',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'on'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'tbl1'=>'content',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'tbl2'=>'id'}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'table'=>'biz\_registration',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'fields'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'id'=>'biz\_id',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'userid'=>'biz\_userid',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'title'=>'biz\_title',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'description'=>'biz\_description',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'status'=>'biz\_status'}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ return\ \$conditions;}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md76}{}\doxysection{\texorpdfstring{Joins Many}{Joins Many}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md76}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<?php}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Assuming\ DB\_HOST,\ DB\_USER,\ DB\_PASSWORD,\ DB\_NAME\ are\ defined\ globally}
+\DoxyCodeLine{//\ in\ your\ application's\ configuration\ (e.g.,\ config.php)}
+\DoxyCodeLine{}
+\DoxyCodeLine{require\_once\ 'App/Core/Db.php';\ //\ Adjust\ path\ as\ per\ your\ project\ structure}
+\DoxyCodeLine{}
+\DoxyCodeLine{use\ App\(\backslash\)Core\(\backslash\)Db;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$db\ =\ new\ Db();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$conditions\ =\ [}
+\DoxyCodeLine{\ \ \ \ 'table'\ =>\ 'users',\ //\ Main\ table}
+\DoxyCodeLine{\ \ \ \ 'joins\_many'\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'type'\ =>\ 'LEFT',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'table'\ =>\ 'products',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'on'\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'id'\ =>\ 'user\_id'\ //\ users.id\ =\ products.user\_id}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'type'\ =>\ 'INNER',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'table'\ =>\ 'carts',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'on'\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'id'\ =>\ 'user\_id'\ //\ users.id\ =\ carts.user\_id}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'type'\ =>\ 'LEFT',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'table'\ =>\ 'orders',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 'on'\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 'id'\ =>\ 'cart\_id',\ //\ carts.id\ =\ orders.cart\_id\ (This\ assumes\ cart\_id\ in\ orders\ refers\ to\ carts.id)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ 'fields'\ =>\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'users.name'\ =>\ 'user\_name',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'products.name'\ =>\ 'product\_name',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'products.price'\ =>\ 'product\_price',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'orders.quantity'\ =>\ 'order\_quantity'}
+\DoxyCodeLine{\ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ 'limit'\ =>\ 10}
+\DoxyCodeLine{];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$result\ =\ \$db-\/>find(\$conditions);}
+\DoxyCodeLine{}
+\DoxyCodeLine{if\ (\$result['success'])\ \{}
+\DoxyCodeLine{\ \ \ \ echo\ "{}Query\ executed\ successfully.\(\backslash\)n"{};}
+\DoxyCodeLine{\ \ \ \ echo\ "{}Generated\ SQL:\(\backslash\)n"{}\ .\ \$result['sql']\ .\ "{}\(\backslash\)n\(\backslash\)n"{};}
+\DoxyCodeLine{\ \ \ \ echo\ "{}Results:\(\backslash\)n"{};}
+\DoxyCodeLine{\ \ \ \ print\_r(\$result['result']);}
+\DoxyCodeLine{\}\ else\ \{}
+\DoxyCodeLine{\ \ \ \ echo\ "{}Query\ failed:\ "{}\ .\ \$result['error']\ .\ "{}\(\backslash\)n"{};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{?>}
+\DoxyCodeLine{Generated\ SQL\ (simplified\ for\ clarity):}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{SELECT}
+\DoxyCodeLine{\ \ \ \ users.`id`,}
+\DoxyCodeLine{\ \ \ \ users.`name`\ AS\ user\_name,}
+\DoxyCodeLine{\ \ \ \ products.`name`\ AS\ product\_name,}
+\DoxyCodeLine{\ \ \ \ products.`price`\ AS\ product\_price,}
+\DoxyCodeLine{\ \ \ \ orders.`quantity`\ AS\ order\_quantity}
+\DoxyCodeLine{FROM\ \`{}users`}
+\DoxyCodeLine{LEFT\ JOIN\ \`{}products`\ ON\ users.`id`\ =\ \`{}products`.`user\_id`}
+\DoxyCodeLine{INNER\ JOIN\ \`{}carts`\ ON\ users.`id`\ =\ \`{}carts`.`user\_id`}
+\DoxyCodeLine{LEFT\ JOIN\ \`{}orders`\ ON\ carts.`id`\ =\ \`{}orders`.`cart\_id`}
+\DoxyCodeLine{LIMIT\ 10;}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md77}{}\doxysubsection{\texorpdfstring{Find data with count}{Find data with count}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md77}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$conditions\ =\ array(}
+\DoxyCodeLine{\ \ \ \ 'table'=>'horizon\_bereavement\_expenses',}
+\DoxyCodeLine{\ \ \ \ 'subquery\_count'=>array(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'col'=>'id',}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'name'=>'total\_rows'}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md78}{}\doxysubsection{\texorpdfstring{Email template}{Email template}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md78}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{http://sandbox.typekoce.com/email/index}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md79}{}\doxysubsection{\texorpdfstring{Post data purified}{Post data purified}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md79}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$this-\/>request-\/>purity();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$this-\/>request-\/>data['post'];}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md80}{}\doxysubsection{\texorpdfstring{Post Advance datas}{Post Advance datas}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md80}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$this-\/>request-\/>post();}
+\DoxyCodeLine{}
+\DoxyCodeLine{new\ dBug(\$this-\/>request-\/>data);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md81}{}\doxysubsection{\texorpdfstring{Phpseclib}{Phpseclib}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md81}
+1.\+0
+
+Download from \href{http://phpseclib.sourceforge.net/}{\texttt{ http\+://phpseclib.\+sourceforge.\+net/}}
+
+1.\+1 Copy files to /app/lib/
+
+1.\+2
+
+1.\+3 Install PEAR wget \href{http://pear.php.net/go-pear.phar}{\texttt{ http\+://pear.\+php.\+net/go-\/pear.\+phar}} \$ php go-\/pear.\+phar
+
+apt-\/get install php5-\/pgsql php-\/pear pear channel-\/discover phpseclib.\+sourceforge.\+net sudo pear remote-\/list -\/c phpseclib pear install phpseclib/\+Net\+\_\+\+SSH2 service nginx restart\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md82}{}\doxysubsection{\texorpdfstring{TODO}{TODO}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md82}
+
+\begin{DoxyItemize}
+\item SSL
+\item attributes
+\item Scaffold
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2README_autotoc_md83}{}\doxysubsection{\texorpdfstring{Test domain (local machine)}{Test domain (local machine)}}\label{md_dev_8sharpishly_8com_2website_2README_autotoc_md83}
+
+\begin{DoxyItemize}
+\item sandbox.\+typekoce.\+com
+\item \href{http://sandbox.typekoce.com/home/cv}{\texttt{ http\+://sandbox.\+typekoce.\+com/home/cv}}
+\item \href{http://sandbox.typekoce.com/cv/read/1}{\texttt{ http\+://sandbox.\+typekoce.\+com/cv/read/1}} 
+\end{DoxyItemize}

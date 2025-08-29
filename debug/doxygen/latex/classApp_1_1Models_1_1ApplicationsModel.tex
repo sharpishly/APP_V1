@@ -1,0 +1,169 @@
+\doxysection{App\textbackslash{}Models\textbackslash{}Applications\+Model Class Reference}
+\hypertarget{classApp_1_1Models_1_1ApplicationsModel}{}\label{classApp_1_1Models_1_1ApplicationsModel}\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_ab62988ff56b412d02d0163cabb7b4c90}{\+\_\+\+\_\+construct}} (PDO \$db)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_a002a356117bc7ac37333afe5a350d568}{create\+Application}} (int \$user\+Id, string \$job\+Title, string \$company\+Name, string \$platform, array \$application\+Data, string \$status=\textquotesingle{}draft\textquotesingle{}, ?string \$external\+Id=null)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_a4f21ad802e42672baf46201cbbe1d2a9}{get\+Application\+By\+Id}} (int \$application\+Id)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_af93c2e01a69225448a59d897a7ec63d9}{get\+All\+Applications\+For\+User}} (int \$user\+Id)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_a716fa5e35acbee4da21bc351e0989820}{update\+Application\+Status}} (int \$application\+Id, string \$new\+Status, ?string \$external\+Id=null)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_aeb34c67efc766285a97f657b0f8e29bb}{delete\+Application}} (int \$application\+Id)
+\item 
+\mbox{\hyperlink{classApp_1_1Models_1_1ApplicationsModel_a7373201b3791316b1ce64eabb8a876a6}{apply\+To\+Job}} (int \$application\+Id, array \$job\+Details, array \$applicant\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Applications\+Model
+
+This model handles all data interactions related to job applications. It manages application records in the database and orchestrates the submission process to various job platforms by delegating to specific job board service classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_ab62988ff56b412d02d0163cabb7b4c90}\label{classApp_1_1Models_1_1ApplicationsModel_ab62988ff56b412d02d0163cabb7b4c90} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{PDO}]{\$db }\end{DoxyParamCaption})}
+
+Constructor Initializes the database connection.
+
+
+\begin{DoxyParams}[1]{Parameters}
+PDO & {\em \$db} & A PDO database connection instance. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If the database connection is not provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_a7373201b3791316b1ce64eabb8a876a6}\label{classApp_1_1Models_1_1ApplicationsModel_a7373201b3791316b1ce64eabb8a876a6} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!applyToJob@{applyToJob}}
+\index{applyToJob@{applyToJob}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{applyToJob()}{applyToJob()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::apply\+To\+Job (\begin{DoxyParamCaption}\item[{int}]{\$application\+Id,  }\item[{array}]{\$job\+Details,  }\item[{array}]{\$applicant\+Data }\end{DoxyParamCaption})}
+
+Orchestrates the process of applying to a job on an external platform. This method would typically interact with various "{}\+Job Board Service"{} classes that encapsulate the API logic for specific platforms.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$application\+Id} & The ID of the internal application record. \\
+\hline
+array & {\em \$job\+Details} & An array containing details about the job and the target platform. Expected keys\+: \textquotesingle{}platform\textquotesingle{}, \textquotesingle{}job\+\_\+url\textquotesingle{}, \textquotesingle{}api\+\_\+config\textquotesingle{}, etc. \\
+\hline
+array & {\em \$applicant\+Data} & An array containing all necessary applicant information (e.\+g., resume\+\_\+file\+\_\+path, cover\+\_\+letter\+\_\+content, contact\+\_\+info). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An array indicating success/failure and any messages/external IDs. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_a002a356117bc7ac37333afe5a350d568}\label{classApp_1_1Models_1_1ApplicationsModel_a002a356117bc7ac37333afe5a350d568} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!createApplication@{createApplication}}
+\index{createApplication@{createApplication}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{createApplication()}{createApplication()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::create\+Application (\begin{DoxyParamCaption}\item[{int}]{\$user\+Id,  }\item[{string}]{\$job\+Title,  }\item[{string}]{\$company\+Name,  }\item[{string}]{\$platform,  }\item[{array}]{\$application\+Data,  }\item[{string}]{\$status = {\ttfamily \textquotesingle{}draft\textquotesingle{}},  }\item[{?string}]{\$external\+Id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Creates a new job application record in the database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The ID of the user submitting the application. \\
+\hline
+string & {\em \$job\+Title} & The title of the job. \\
+\hline
+string & {\em \$company\+Name} & The name of the company. \\
+\hline
+string & {\em \$platform} & The platform the job was found on (e.\+g., \textquotesingle{}Linked\+In\textquotesingle{}, \textquotesingle{}Indeed\textquotesingle{}, \textquotesingle{}Company\+Website\textquotesingle{}). \\
+\hline
+array & {\em \$application\+Data} & An associative array containing detailed application data (e.\+g., resume\+\_\+path, cover\+\_\+letter\+\_\+text, custom\+\_\+fields). \\
+\hline
+string & {\em \$status} & The initial status of the application (default\+: \textquotesingle{}draft\textquotesingle{}). \\
+\hline
+string | null & {\em \$external\+Id} & An optional ID from the external platform if available after submission. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\texorpdfstring{$\vert$}{|}false The ID of the newly created application record, or false on failure. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_aeb34c67efc766285a97f657b0f8e29bb}\label{classApp_1_1Models_1_1ApplicationsModel_aeb34c67efc766285a97f657b0f8e29bb} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!deleteApplication@{deleteApplication}}
+\index{deleteApplication@{deleteApplication}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{deleteApplication()}{deleteApplication()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::delete\+Application (\begin{DoxyParamCaption}\item[{int}]{\$application\+Id }\end{DoxyParamCaption})}
+
+Deletes a job application record from the database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$application\+Id} & The ID of the application to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_af93c2e01a69225448a59d897a7ec63d9}\label{classApp_1_1Models_1_1ApplicationsModel_af93c2e01a69225448a59d897a7ec63d9} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!getAllApplicationsForUser@{getAllApplicationsForUser}}
+\index{getAllApplicationsForUser@{getAllApplicationsForUser}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{getAllApplicationsForUser()}{getAllApplicationsForUser()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::get\+All\+Applications\+For\+User (\begin{DoxyParamCaption}\item[{int}]{\$user\+Id }\end{DoxyParamCaption})}
+
+Retrieves all job applications for a specific user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$user\+Id} & The ID of the user. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An array of associative arrays, each representing an application. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_a4f21ad802e42672baf46201cbbe1d2a9}\label{classApp_1_1Models_1_1ApplicationsModel_a4f21ad802e42672baf46201cbbe1d2a9} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!getApplicationById@{getApplicationById}}
+\index{getApplicationById@{getApplicationById}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{getApplicationById()}{getApplicationById()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::get\+Application\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{\$application\+Id }\end{DoxyParamCaption})}
+
+Retrieves a job application by its ID.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$application\+Id} & The ID of the application to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}false An associative array of the application data, or false if not found. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Models_1_1ApplicationsModel_a716fa5e35acbee4da21bc351e0989820}\label{classApp_1_1Models_1_1ApplicationsModel_a716fa5e35acbee4da21bc351e0989820} 
+\index{App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}!updateApplicationStatus@{updateApplicationStatus}}
+\index{updateApplicationStatus@{updateApplicationStatus}!App\textbackslash{}Models\textbackslash{}ApplicationsModel@{App\textbackslash{}Models\textbackslash{}ApplicationsModel}}
+\doxysubsubsection{\texorpdfstring{updateApplicationStatus()}{updateApplicationStatus()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Models\textbackslash{}\+Applications\+Model\+::update\+Application\+Status (\begin{DoxyParamCaption}\item[{int}]{\$application\+Id,  }\item[{string}]{\$new\+Status,  }\item[{?string}]{\$external\+Id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Updates the status of a job application.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$application\+Id} & The ID of the application to update. \\
+\hline
+string & {\em \$new\+Status} & The new status (e.\+g., \textquotesingle{}submitted\textquotesingle{}, \textquotesingle{}failed\textquotesingle{}, \textquotesingle{}accepted\textquotesingle{}). \\
+\hline
+string | null & {\em \$external\+Id} & Optional\+: An external ID from the job platform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/dev-\/will-\/be-\/deleted/Applications\+Model.\+php\end{DoxyCompactItemize}

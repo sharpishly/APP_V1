@@ -1,0 +1,12 @@
+digraph "dev.sharpishly.com/website/app/controllers"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_b1895526a65300df26f9bd846b4bb0e2 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="app", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_b1895526a65300df26f9bd846b4bb0e2.html",tooltip=""]
+  dir_af749524afe0d6fb82da2b2630b3d22f [label="controllers", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_af749524afe0d6fb82da2b2630b3d22f.html",tooltip=""];
+  }
+}

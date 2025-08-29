@@ -13,3 +13,6 @@
 [submodule "node_app"]
 	path = node_app
 	url = git@github.com:sharpishly/DOCKER_NODEJS_SETUP.git
+[submodule "pymvc"]
+	path = pymvc
+	url = git@github.com:sharpishly/PYTHONMVC.git

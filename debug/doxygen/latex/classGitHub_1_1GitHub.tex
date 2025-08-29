@@ -1,0 +1,101 @@
+\doxysection{Git\+Hub\textbackslash{}Git\+Hub Class Reference}
+\hypertarget{classGitHub_1_1GitHub}{}\label{classGitHub_1_1GitHub}\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHub_ab90b8ff28a393cea957ba5924c37a955}{\+\_\+\+\_\+construct}} (\$token)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHub_ac40d341578dd9316c255c0a75a6ddf5d}{get\+User}} (\$username)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHub_a0cf70d60a0ad053247155c55aaba2f46}{get\+User\+Repos}} (\$username)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHub_a9199e790d4993f3875ab399d47f59a51}{create\+Repo}} (\$name, \$description=\textquotesingle{}\textquotesingle{}, \$private=false)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHub_a054ceac5cc7d3f6bd5183350e3a4e842}{save\+Deploy\+Yaml}} (\$repo, \$yaml\+Content, \$branch=\textquotesingle{}main\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGitHub_1_1GitHub_ab90b8ff28a393cea957ba5924c37a955}\label{classGitHub_1_1GitHub_ab90b8ff28a393cea957ba5924c37a955} 
+\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+Constructor for Git\+Hub class 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$token} & Personal Access Token for authentication \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGitHub_1_1GitHub_a9199e790d4993f3875ab399d47f59a51}\label{classGitHub_1_1GitHub_a9199e790d4993f3875ab399d47f59a51} 
+\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}!createRepo@{createRepo}}
+\index{createRepo@{createRepo}!GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection{\texorpdfstring{createRepo()}{createRepo()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+::create\+Repo (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$description = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$private = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Create a new repository 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & Repository name \\
+\hline
+string & {\em \$description} & Repository description \\
+\hline
+bool & {\em \$private} & If the repository should be private \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Response from Git\+Hub 
+\end{DoxyReturn}
+\Hypertarget{classGitHub_1_1GitHub_ac40d341578dd9316c255c0a75a6ddf5d}\label{classGitHub_1_1GitHub_ac40d341578dd9316c255c0a75a6ddf5d} 
+\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}!getUser@{getUser}}
+\index{getUser@{getUser}!GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+::get\+User (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Get user details 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & Git\+Hub username \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array User data 
+\end{DoxyReturn}
+\Hypertarget{classGitHub_1_1GitHub_a0cf70d60a0ad053247155c55aaba2f46}\label{classGitHub_1_1GitHub_a0cf70d60a0ad053247155c55aaba2f46} 
+\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}!getUserRepos@{getUserRepos}}
+\index{getUserRepos@{getUserRepos}!GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection{\texorpdfstring{getUserRepos()}{getUserRepos()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+::get\+User\+Repos (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+Get repositories for a user 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & Git\+Hub username \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array List of repositories 
+\end{DoxyReturn}
+\Hypertarget{classGitHub_1_1GitHub_a054ceac5cc7d3f6bd5183350e3a4e842}\label{classGitHub_1_1GitHub_a054ceac5cc7d3f6bd5183350e3a4e842} 
+\index{GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}!saveDeployYaml@{saveDeployYaml}}
+\index{saveDeployYaml@{saveDeployYaml}!GitHub\textbackslash{}GitHub@{GitHub\textbackslash{}GitHub}}
+\doxysubsubsection{\texorpdfstring{saveDeployYaml()}{saveDeployYaml()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+::save\+Deploy\+Yaml (\begin{DoxyParamCaption}\item[{}]{\$repo,  }\item[{}]{\$yaml\+Content,  }\item[{}]{\$branch = {\ttfamily \textquotesingle{}main\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Create or update the deploy.\+yml file in the .github/workflows directory 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$repo} & Owner/repo name (e.\+g., \textquotesingle{}username/repo\textquotesingle{}) \\
+\hline
+string & {\em \$yaml\+Content} & The content of the deploy.\+yml file to commit \\
+\hline
+string & {\em \$branch} & The branch to commit to (default is \textquotesingle{}main\textquotesingle{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Response from the Git\+Hub API 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Git\+Hub/Git\+Hub.\+php\end{DoxyCompactItemize}

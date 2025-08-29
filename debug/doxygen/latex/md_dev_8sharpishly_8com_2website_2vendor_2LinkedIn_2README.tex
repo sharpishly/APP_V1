@@ -1,0 +1,198 @@
+\chapter{Linked\+In API PHP Class}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README}{}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README}\index{LinkedIn API PHP Class@{LinkedIn API PHP Class}}
+\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md85}%
+\Hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md85}%
+ This PHP class ({\ttfamily Linked\+In.\+php}) provides functionality to interact with the Linked\+In API, allowing users to retrieve the latest job postings and submit job applications. It uses OAuth 2.\+0 for authentication and handles HTTP requests using c\+URL without relying on third-\/party packages.\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md86}{}\doxysection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md86}
+
+\begin{DoxyItemize}
+\item {\bfseries{PHP 7.\+4 or higher}} with c\+URL extension enabled.
+\item A {\bfseries{Linked\+In Developer account}} and a registered app in the \href{https://developer.linkedin.com}{\texttt{ Linked\+In Developer Portal}}.
+\item {\bfseries{Client ID}} and {\bfseries{Client Secret}} from your Linked\+In app.
+\item A {\bfseries{Redirect URI}} registered in your Linked\+In app settings.
+\item Access to Linked\+In API permissions (e.\+g., {\ttfamily r\+\_\+liteprofile}, {\ttfamily r\+\_\+emailaddress}, {\ttfamily w\+\_\+member\+\_\+social}). Note that job-\/related APIs may require Talent Solutions partner access.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md87}{}\doxysection{\texorpdfstring{Setup}{Setup}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md87}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Clone or Download the Class}}\+: Save {\ttfamily Linked\+In.\+php} in your project directory.
+\item {\bfseries{Configure Your Linked\+In App}}\+:
+\begin{DoxyItemize}
+\item Log in to the \href{https://developer.linkedin.com}{\texttt{ Linked\+In Developer Portal}}.
+\item Create a new app or use an existing one.
+\item Add the redirect URI (e.\+g., {\ttfamily \href{http://yourdomain.com/callback.php}{\texttt{ http\+://yourdomain.\+com/callback.\+php}}}) to your app\textquotesingle{}s OAuth 2.\+0 settings.
+\item Note your app\textquotesingle{}s {\bfseries{Client ID}} and {\bfseries{Client Secret}}.
+\end{DoxyItemize}
+\item {\bfseries{Set Up a Callback Script}}\+: Create a PHP script (e.\+g., {\ttfamily callback.\+php}) to handle the OAuth redirect and process the authorization code.
+\end{DoxyEnumerate}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md88}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md88}
+No external dependencies are required. Simply include {\ttfamily Linked\+In.\+php} in your PHP project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require\_once\ \textcolor{stringliteral}{'LinkedIn.php'};}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md89}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md89}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md90}{}\doxysubsection{\texorpdfstring{Initialize the Linked\+In Class}{Initialize the LinkedIn Class}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md90}
+Create an instance of the {\ttfamily Linked\+In} class with your app credentials and redirect URI\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$linkedin\ =\ \textcolor{keyword}{new}\ LinkedIn(}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'YOUR\_CLIENT\_ID'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'YOUR\_CLIENT\_SECRET'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'YOUR\_REDIRECT\_URI'}}
+\DoxyCodeLine{);}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md91}{}\doxysubsection{\texorpdfstring{Step 1\+: Authenticate the User}{Step 1: Authenticate the User}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md91}
+Generate a login URL and direct the user to Linked\+In for authorization\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$loginUrl\ =\ \$linkedin-\/>getLoginUrl();}
+\DoxyCodeLine{echo\ \textcolor{stringliteral}{"{}Please\ visit:\ <a\ href='\$loginUrl'>Login\ with\ LinkedIn</a>"{}};}
+
+\end{DoxyCode}
+
+
+This redirects the user to Linked\+In\textquotesingle{}s authorization page. After approval, Linked\+In redirects back to your specified redirect URI with an authorization code in the URL (e.\+g., {\ttfamily \href{http://yourdomain.com/callback.php?code=AUTH_CODE}{\texttt{ http\+://yourdomain.\+com/callback.\+php?code=\+AUTH\+\_\+\+CODE}}}).\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md92}{}\doxysubsection{\texorpdfstring{Step 2\+: Exchange Authorization Code for Access Token}{Step 2: Exchange Authorization Code for Access Token}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md92}
+In your callback script (e.\+g., {\ttfamily callback.\+php}), exchange the authorization code for an access token\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require\_once\ \textcolor{stringliteral}{'LinkedIn.php'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$linkedin\ =\ \textcolor{keyword}{new}\ LinkedIn(\textcolor{stringliteral}{'YOUR\_CLIENT\_ID'},\ \textcolor{stringliteral}{'YOUR\_CLIENT\_SECRET'},\ \textcolor{stringliteral}{'YOUR\_REDIRECT\_URI'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{'code'}]))\ \{}
+\DoxyCodeLine{\ \ \ \ \$accessToken\ =\ \$linkedin-\/>getAccessToken(\$\_GET[\textcolor{stringliteral}{'code'}]);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\$accessToken)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Access\ Token:\ "{}}\ .\ \$accessToken[\textcolor{stringliteral}{'access\_token'}];}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Failed\ to\ obtain\ access\ token."{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md93}{}\doxysubsection{\texorpdfstring{Step 3\+: Retrieve Latest Jobs}{Step 3: Retrieve Latest Jobs}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md93}
+Fetch the latest job postings (limited by the specified number)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$jobs\ =\ \$linkedin-\/>getLatestJobs(5);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (isset(\$jobs[\textcolor{stringliteral}{'error'}]))\ \{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}Error:\ "{}}\ .\ \$jobs[\textcolor{stringliteral}{'error'}];}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{foreach}\ (\$jobs\ as\ \$job)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Job\ Title:\ "{}}\ .\ (\$job[\textcolor{stringliteral}{'title'}]\ ??\ \textcolor{stringliteral}{'N/A'})\ .\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Job\ ID:\ "{}}\ .\ (\$job[\textcolor{stringliteral}{'id'}]\ ??\ \textcolor{stringliteral}{'N/A'})\ .\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Note}}\+: The job search API may require Talent Solutions partner access. Without it, you may receive a permission error.\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md94}{}\doxysubsection{\texorpdfstring{Step 4\+: Apply for a Job}{Step 4: Apply for a Job}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md94}
+Submit a job application on behalf of the authenticated user\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$jobId\ =\ \textcolor{stringliteral}{'urn:li:job:123456'};\ \textcolor{comment}{//\ Replace\ with\ actual\ job\ ID}}
+\DoxyCodeLine{\$applicationData\ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'resume'}\ =>\ \textcolor{stringliteral}{'Base64\ encoded\ resume\ content'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'coverLetter'}\ =>\ \textcolor{stringliteral}{'Cover\ letter\ text'}}
+\DoxyCodeLine{];}
+\DoxyCodeLine{\$result\ =\ \$linkedin-\/>applyForJob(\$jobId,\ \$applicationData);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (isset(\$result[\textcolor{stringliteral}{'error'}]))\ \{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}Error:\ "{}}\ .\ \$result[\textcolor{stringliteral}{'error'}];}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ echo\ \textcolor{stringliteral}{"{}Application\ submitted\ successfully!"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Note}}\+: Job application APIs typically require specific permissions (e.\+g., Talent Solutions). Check your app\textquotesingle{}s access level.\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md95}{}\doxysubsection{\texorpdfstring{Step 5\+: User Registration (\+Limitations)}{Step 5: User Registration (Limitations)}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md95}
+The Linked\+In API does not support direct user registration. Users must sign up via Linked\+In\textquotesingle{}s website, and the API handles authentication via OAuth. Attempting to register a user\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$userData\ =\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'firstName'}\ =>\ \textcolor{stringliteral}{'John'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'lastName'}\ =>\ \textcolor{stringliteral}{'Doe'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'email'}\ =>\ \textcolor{stringliteral}{'john.doe@example.com'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'password'}\ =>\ \textcolor{stringliteral}{'securepassword'}}
+\DoxyCodeLine{];}
+\DoxyCodeLine{\$result\ =\ \$linkedin-\/>registerUser(\$userData);}
+\DoxyCodeLine{echo\ \$result[\textcolor{stringliteral}{'message'}];}
+
+\end{DoxyCode}
+
+
+This will inform you that direct registration is not supported and guide you to use the OAuth flow.\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md96}{}\doxysection{\texorpdfstring{Example Full Workflow}{Example Full Workflow}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md96}
+Create a file (e.\+g., {\ttfamily index.\+php}) to initiate the OAuth flow and a callback script (e.\+g., {\ttfamily callback.\+php}) to handle the response.
+
+{\bfseries{index.\+php}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require\_once\ \textcolor{stringliteral}{'LinkedIn.php'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$linkedin\ =\ \textcolor{keyword}{new}\ LinkedIn(\textcolor{stringliteral}{'YOUR\_CLIENT\_ID'},\ \textcolor{stringliteral}{'YOUR\_CLIENT\_SECRET'},\ \textcolor{stringliteral}{'http://yourdomain.com/callback.php'});}
+\DoxyCodeLine{\$loginUrl\ =\ \$linkedin-\/>getLoginUrl();}
+\DoxyCodeLine{echo\ \textcolor{stringliteral}{"{}<a\ href='\$loginUrl'>Login\ with\ LinkedIn</a>"{}};}
+
+\end{DoxyCode}
+
+
+{\bfseries{callback.\+php}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{require\_once\ \textcolor{stringliteral}{'LinkedIn.php'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\$linkedin\ =\ \textcolor{keyword}{new}\ LinkedIn(\textcolor{stringliteral}{'YOUR\_CLIENT\_ID'},\ \textcolor{stringliteral}{'YOUR\_CLIENT\_SECRET'},\ \textcolor{stringliteral}{'http://yourdomain.com/callback.php'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (isset(\$\_GET[\textcolor{stringliteral}{'code'}]))\ \{}
+\DoxyCodeLine{\ \ \ \ \$accessToken\ =\ \$linkedin-\/>getAccessToken(\$\_GET[\textcolor{stringliteral}{'code'}]);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (\$accessToken)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fetch\ jobs}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$jobs\ =\ \$linkedin-\/>getLatestJobs(5);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ print\_r(\$jobs);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ for\ a\ job}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$jobId\ =\ \textcolor{stringliteral}{'urn:li:job:123456'};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$applicationData\ =\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'resume'}\ =>\ \textcolor{stringliteral}{'Base64\ encoded\ resume'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'coverLetter'}\ =>\ \textcolor{stringliteral}{'Applying\ for\ the\ position'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \$result\ =\ \$linkedin-\/>applyForJob(\$jobId,\ \$applicationData);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ print\_r(\$result);}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ echo\ \textcolor{stringliteral}{"{}Authentication\ failed."{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md97}{}\doxysection{\texorpdfstring{Important Notes}{Important Notes}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md97}
+
+\begin{DoxyItemize}
+\item {\bfseries{API Permissions}}\+: Job-\/related APIs (e.\+g., job search, applications) often require Linked\+In Talent Solutions partner access. Without it, you may encounter {\ttfamily 403 Forbidden} errors. Apply for access via the \href{https://developer.linkedin.com}{\texttt{ Linked\+In Developer Portal}}.
+\item {\bfseries{User Registration}}\+: Linked\+In does not allow direct user creation via the API. Users must register on Linked\+In\textquotesingle{}s website, and the API handles authentication.
+\item {\bfseries{Security}}\+:
+\begin{DoxyItemize}
+\item Store the access token securely (e.\+g., in a database or session).
+\item Avoid exposing {\ttfamily Client ID} and {\ttfamily Client Secret} in public code.
+\item Use HTTPS for all requests to prevent token leakage.
+\end{DoxyItemize}
+\item {\bfseries{Rate Limits}}\+: Linked\+In imposes API rate limits. Monitor your app\textquotesingle{}s usage in the Developer Portal.
+\item {\bfseries{Error Handling}}\+: The class includes basic error handling. Enhance it based on your application\textquotesingle{}s needs (e.\+g., logging, user-\/friendly messages).
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md98}{}\doxysection{\texorpdfstring{Troubleshooting}{Troubleshooting}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md98}
+
+\begin{DoxyItemize}
+\item {\bfseries{Authentication Errors}}\+: Ensure your {\ttfamily Client ID}, {\ttfamily Client Secret}, and {\ttfamily Redirect URI} match those in the Linked\+In Developer Portal.
+\item {\bfseries{Permission Denied}}\+: If job-\/related endpoints return errors, verify your app has the necessary permissions or apply for Talent Solutions access.
+\item {\bfseries{c\+URL Issues}}\+: Ensure the c\+URL extension is enabled in your PHP environment ({\ttfamily php\+\_\+curl}).
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md99}{}\doxysection{\texorpdfstring{Limitations}{Limitations}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md99}
+
+\begin{DoxyItemize}
+\item {\bfseries{Job APIs}}\+: Public access to job postings and applications is restricted. You may need partner status for full functionality.
+\item {\bfseries{User Registration}}\+: Direct user creation is not supported. Rely on Linked\+In\textquotesingle{}s OAuth flow for authentication.
+\item {\bfseries{API Changes}}\+: Linked\+In\textquotesingle{}s API may change. Check the \href{https://docs.microsoft.com/en-us/linkedin/}{\texttt{ Linked\+In API documentation}} for updates.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md100}{}\doxysection{\texorpdfstring{License}{License}}\label{md_dev_8sharpishly_8com_2website_2vendor_2LinkedIn_2README_autotoc_md100}
+This project is licensed under the MIT License. 

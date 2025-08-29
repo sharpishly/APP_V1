@@ -1,0 +1,122 @@
+\doxysection{App\textbackslash{}Core\textbackslash{}Expired\+Activity Class Reference}
+\hypertarget{classApp_1_1Core_1_1ExpiredActivity}{}\label{classApp_1_1Core_1_1ExpiredActivity}\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_aac8f9c648f19165e093a77fb111c18ce}{\+\_\+\+\_\+construct}} (\$timeout\+Minutes=2, \$login\+Page=\textquotesingle{}/login.\+php\textquotesingle{}, \$session\+User\+Key=\textquotesingle{}user\textquotesingle{})
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_ab5564e3a75573f917f3ef63fd20257cf}{set\+Inactivity\+Timeout}} (\$minutes)
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_ae642703b03186b3d05eebf914d1546fa}{set\+Login\+Page}} (\$url)
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_a53765ca4b3c8ff45d91dadf9a1b32372}{set\+Session\+User\+Key}} (\$key)
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_a753371259ff4161c209542b74b2729f6}{check\+Activity}} ()
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_ae109bd4bb0905bbe326720eb88e5de47}{destroy\+Session}} ()
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_ab0f12db36b556f38c82514c4431265fb}{get\+Timeout\+Milliseconds}} ()
+\item 
+\mbox{\hyperlink{classApp_1_1Core_1_1ExpiredActivity_acedc894466f71bfaa619d51fa6ac9672}{get\+Heartbeat\+Interval\+Milliseconds}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_aac8f9c648f19165e093a77fb111c18ce}\label{classApp_1_1Core_1_1ExpiredActivity_aac8f9c648f19165e093a77fb111c18ce} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$timeout\+Minutes = {\ttfamily 2},  }\item[{}]{\$login\+Page = {\ttfamily \textquotesingle{}/login.php\textquotesingle{}},  }\item[{}]{\$session\+User\+Key = {\ttfamily \textquotesingle{}user\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Constructor for Expired\+Activity.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$timeout\+Minutes} & The inactivity timeout duration in minutes. \\
+\hline
+string & {\em \$login\+Page} & The URL to redirect to if the session expires. \\
+\hline
+string & {\em \$session\+User\+Key} & The session key that indicates a logged-\/in user (e.\+g., \textquotesingle{}user\textquotesingle{} or \textquotesingle{}user\+\_\+id\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_a753371259ff4161c209542b74b2729f6}\label{classApp_1_1Core_1_1ExpiredActivity_a753371259ff4161c209542b74b2729f6} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!checkActivity@{checkActivity}}
+\index{checkActivity@{checkActivity}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{checkActivity()}{checkActivity()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::check\+Activity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks user activity and redirects if the session has expired due to inactivity. Updates the last activity timestamp if the session is active. \Hypertarget{classApp_1_1Core_1_1ExpiredActivity_ae109bd4bb0905bbe326720eb88e5de47}\label{classApp_1_1Core_1_1ExpiredActivity_ae109bd4bb0905bbe326720eb88e5de47} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!destroySession@{destroySession}}
+\index{destroySession@{destroySession}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{destroySession()}{destroySession()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::destroy\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destroys the current session completely. \Hypertarget{classApp_1_1Core_1_1ExpiredActivity_acedc894466f71bfaa619d51fa6ac9672}\label{classApp_1_1Core_1_1ExpiredActivity_acedc894466f71bfaa619d51fa6ac9672} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!getHeartbeatIntervalMilliseconds@{getHeartbeatIntervalMilliseconds}}
+\index{getHeartbeatIntervalMilliseconds@{getHeartbeatIntervalMilliseconds}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{getHeartbeatIntervalMilliseconds()}{getHeartbeatIntervalMilliseconds()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::get\+Heartbeat\+Interval\+Milliseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the session heartbeat interval in milliseconds for Java\+Script. This should be less than the actual timeout to keep the session alive.
+
+\begin{DoxyReturn}{Returns}
+int Heartbeat interval in milliseconds. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_ab0f12db36b556f38c82514c4431265fb}\label{classApp_1_1Core_1_1ExpiredActivity_ab0f12db36b556f38c82514c4431265fb} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!getTimeoutMilliseconds@{getTimeoutMilliseconds}}
+\index{getTimeoutMilliseconds@{getTimeoutMilliseconds}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{getTimeoutMilliseconds()}{getTimeoutMilliseconds()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::get\+Timeout\+Milliseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the inactivity timeout in milliseconds for Java\+Script.
+
+\begin{DoxyReturn}{Returns}
+int Timeout in milliseconds. 
+\end{DoxyReturn}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_ab5564e3a75573f917f3ef63fd20257cf}\label{classApp_1_1Core_1_1ExpiredActivity_ab5564e3a75573f917f3ef63fd20257cf} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!setInactivityTimeout@{setInactivityTimeout}}
+\index{setInactivityTimeout@{setInactivityTimeout}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{setInactivityTimeout()}{setInactivityTimeout()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::set\+Inactivity\+Timeout (\begin{DoxyParamCaption}\item[{}]{\$minutes }\end{DoxyParamCaption})}
+
+Sets the inactivity timeout duration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$minutes} & The new timeout duration in minutes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_ae642703b03186b3d05eebf914d1546fa}\label{classApp_1_1Core_1_1ExpiredActivity_ae642703b03186b3d05eebf914d1546fa} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!setLoginPage@{setLoginPage}}
+\index{setLoginPage@{setLoginPage}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{setLoginPage()}{setLoginPage()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::set\+Login\+Page (\begin{DoxyParamCaption}\item[{}]{\$url }\end{DoxyParamCaption})}
+
+Sets the login page URL for redirection.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The new login page URL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classApp_1_1Core_1_1ExpiredActivity_a53765ca4b3c8ff45d91dadf9a1b32372}\label{classApp_1_1Core_1_1ExpiredActivity_a53765ca4b3c8ff45d91dadf9a1b32372} 
+\index{App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}!setSessionUserKey@{setSessionUserKey}}
+\index{setSessionUserKey@{setSessionUserKey}!App\textbackslash{}Core\textbackslash{}ExpiredActivity@{App\textbackslash{}Core\textbackslash{}ExpiredActivity}}
+\doxysubsubsection{\texorpdfstring{setSessionUserKey()}{setSessionUserKey()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Core\textbackslash{}\+Expired\+Activity\+::set\+Session\+User\+Key (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})}
+
+Sets the session key used to identify a logged-\/in user.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & The session key (e.\+g., \textquotesingle{}user\textquotesingle{} or \textquotesingle{}user\+\_\+id\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/dev-\/will-\/be-\/deleted/Expired\+Activity.\+php\end{DoxyCompactItemize}

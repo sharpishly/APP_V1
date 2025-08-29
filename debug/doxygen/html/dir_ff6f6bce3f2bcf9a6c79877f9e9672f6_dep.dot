@@ -1,0 +1,19 @@
+digraph "dev.sharpishly.com/website"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_14109e7c60e9c1eed8c6a6caabfd10ad {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="dev.sharpishly.com", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_14109e7c60e9c1eed8c6a6caabfd10ad.html",tooltip=""]
+  subgraph clusterdir_ff6f6bce3f2bcf9a6c79877f9e9672f6 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_ff6f6bce3f2bcf9a6c79877f9e9672f6.html",tooltip=""]
+    dir_ff6f6bce3f2bcf9a6c79877f9e9672f6 [shape=plaintext, label="website"];
+  dir_b1895526a65300df26f9bd846b4bb0e2 [label="app", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_b1895526a65300df26f9bd846b4bb0e2.html",tooltip=""];
+  dir_d325ad82c330f7ac7e9578018088269b [label="dev-will-be-deleted", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_d325ad82c330f7ac7e9578018088269b.html",tooltip=""];
+  dir_ca460c96f17e4e66a53dc76f0a0a59e2 [label="public", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_ca460c96f17e4e66a53dc76f0a0a59e2.html",tooltip=""];
+  dir_6031a4b2d1cb1e9d66cf451e65c1ec22 [label="vendor", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_6031a4b2d1cb1e9d66cf451e65c1ec22.html",tooltip=""];
+  }
+  }
+}

@@ -1,0 +1,88 @@
+\doxysection{Git\+Hub\textbackslash{}Git\+Hub\+Actions Class Reference}
+\hypertarget{classGitHub_1_1GitHubActions}{}\label{classGitHub_1_1GitHubActions}\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGitHub_1_1GitHubActions_a36e0bc9b5e6333d9d0d3902bf249d54f}\label{classGitHub_1_1GitHubActions_a36e0bc9b5e6333d9d0d3902bf249d54f} 
+{\bfseries \+\_\+\+\_\+construct} (\$name=\textquotesingle{}CI Workflow\textquotesingle{})
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_ade86aa7b41422effe05032ca12dd31d2}{on\+Push}} (\$branches=\mbox{[}\textquotesingle{}main\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_ae3773148b3deded585356056c0d5d6f5}{on\+Pull\+Request}} (\$branches=\mbox{[}\textquotesingle{}main\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_a6d9502513ed47d1148c00618cccb3d79}{add\+Job}} (\$job\+Id, \$name, \$runs\+On=\textquotesingle{}ubuntu-\/latest\textquotesingle{})
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_ab86637f69a81592938a5a3e7e594ab95}{add\+Step}} (\$job\+Id, \$name, \$run=null, \$uses=null)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_aa0f656a8df320df8a1cd37cad06c14b6}{set\+Job\+Env}} (\$job\+Id, \$env=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_a68b7c97c96d477ef238f615835cbacd2}{get\+Env}} (\$key)
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_a3c371a127827fa1856b89cc109729fb6}{generate\+Workflow\+YAML}} ()
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_a70e388d4c5b0d11e70ce0e7f1a0375b1}{is\+Git\+Hub\+Actions}} ()
+\item 
+\mbox{\hyperlink{classGitHub_1_1GitHubActions_a91fc54585f45ef3c0aed9934067550fd}{save\+To\+File}} (\$filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGitHub_1_1GitHubActions_a6d9502513ed47d1148c00618cccb3d79}\label{classGitHub_1_1GitHubActions_a6d9502513ed47d1148c00618cccb3d79} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!addJob@{addJob}}
+\index{addJob@{addJob}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::add\+Job (\begin{DoxyParamCaption}\item[{}]{\$job\+Id,  }\item[{}]{\$name,  }\item[{}]{\$runs\+On = {\ttfamily \textquotesingle{}ubuntu-\/latest\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Add a job to the workflow \Hypertarget{classGitHub_1_1GitHubActions_ab86637f69a81592938a5a3e7e594ab95}\label{classGitHub_1_1GitHubActions_ab86637f69a81592938a5a3e7e594ab95} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!addStep@{addStep}}
+\index{addStep@{addStep}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{addStep()}{addStep()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::add\+Step (\begin{DoxyParamCaption}\item[{}]{\$job\+Id,  }\item[{}]{\$name,  }\item[{}]{\$run = {\ttfamily null},  }\item[{}]{\$uses = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Add a step to a specific job \Hypertarget{classGitHub_1_1GitHubActions_a3c371a127827fa1856b89cc109729fb6}\label{classGitHub_1_1GitHubActions_a3c371a127827fa1856b89cc109729fb6} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!generateWorkflowYAML@{generateWorkflowYAML}}
+\index{generateWorkflowYAML@{generateWorkflowYAML}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{generateWorkflowYAML()}{generateWorkflowYAML()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::generate\+Workflow\+YAML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generate YAML workflow configuration \Hypertarget{classGitHub_1_1GitHubActions_a68b7c97c96d477ef238f615835cbacd2}\label{classGitHub_1_1GitHubActions_a68b7c97c96d477ef238f615835cbacd2} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!getEnv@{getEnv}}
+\index{getEnv@{getEnv}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{getEnv()}{getEnv()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::get\+Env (\begin{DoxyParamCaption}\item[{}]{\$key }\end{DoxyParamCaption})}
+
+Get current Git\+Hub Actions environment variable \Hypertarget{classGitHub_1_1GitHubActions_a70e388d4c5b0d11e70ce0e7f1a0375b1}\label{classGitHub_1_1GitHubActions_a70e388d4c5b0d11e70ce0e7f1a0375b1} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!isGitHubActions@{isGitHubActions}}
+\index{isGitHubActions@{isGitHubActions}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{isGitHubActions()}{isGitHubActions()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::is\+Git\+Hub\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check if running in Git\+Hub Actions environment \Hypertarget{classGitHub_1_1GitHubActions_ae3773148b3deded585356056c0d5d6f5}\label{classGitHub_1_1GitHubActions_ae3773148b3deded585356056c0d5d6f5} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!onPullRequest@{onPullRequest}}
+\index{onPullRequest@{onPullRequest}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{onPullRequest()}{onPullRequest()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::on\+Pull\+Request (\begin{DoxyParamCaption}\item[{}]{\$branches = {\ttfamily \mbox{[}\textquotesingle{}main\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Set trigger for pull request events \Hypertarget{classGitHub_1_1GitHubActions_ade86aa7b41422effe05032ca12dd31d2}\label{classGitHub_1_1GitHubActions_ade86aa7b41422effe05032ca12dd31d2} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!onPush@{onPush}}
+\index{onPush@{onPush}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{onPush()}{onPush()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::on\+Push (\begin{DoxyParamCaption}\item[{}]{\$branches = {\ttfamily \mbox{[}\textquotesingle{}main\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Set trigger for push events \Hypertarget{classGitHub_1_1GitHubActions_a91fc54585f45ef3c0aed9934067550fd}\label{classGitHub_1_1GitHubActions_a91fc54585f45ef3c0aed9934067550fd} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::save\+To\+File (\begin{DoxyParamCaption}\item[{}]{\$filename }\end{DoxyParamCaption})}
+
+Save YAML to a file \Hypertarget{classGitHub_1_1GitHubActions_aa0f656a8df320df8a1cd37cad06c14b6}\label{classGitHub_1_1GitHubActions_aa0f656a8df320df8a1cd37cad06c14b6} 
+\index{GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}!setJobEnv@{setJobEnv}}
+\index{setJobEnv@{setJobEnv}!GitHub\textbackslash{}GitHubActions@{GitHub\textbackslash{}GitHubActions}}
+\doxysubsubsection{\texorpdfstring{setJobEnv()}{setJobEnv()}}
+{\footnotesize\ttfamily Git\+Hub\textbackslash{}\+Git\+Hub\+Actions\+::set\+Job\+Env (\begin{DoxyParamCaption}\item[{}]{\$job\+Id,  }\item[{}]{\$env = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Set environment variables for a job 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Git\+Hub/Git\+Hub\+Actions.\+php\end{DoxyCompactItemize}

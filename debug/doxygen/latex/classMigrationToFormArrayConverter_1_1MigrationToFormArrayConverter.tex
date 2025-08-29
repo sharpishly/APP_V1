@@ -1,0 +1,64 @@
+\doxysection{Migration\+To\+Form\+Array\+Converter\textbackslash{}Migration\+To\+Form\+Array\+Converter Class Reference}
+\hypertarget{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter}{}\label{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter}\index{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter@{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_a0aca50cf0dce540fb7082b85588fcf2b}{convert}} (array \$migration)
+\item 
+static \mbox{\hyperlink{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_adeb464a0ccaaa8720db1879515779b6e}{convert\+Populate\+Records}} (array \$migration, array \$record)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Migration\+To\+Form\+Array\+Converter Converts a database migration array to a form array for use in models and populates it with record data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_a0aca50cf0dce540fb7082b85588fcf2b}\label{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_a0aca50cf0dce540fb7082b85588fcf2b} 
+\index{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter@{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter}!convert@{convert}}
+\index{convert@{convert}!MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter@{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter}}
+\doxysubsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily static Migration\+To\+Form\+Array\+Converter\textbackslash{}\+Migration\+To\+Form\+Array\+Converter\+::convert (\begin{DoxyParamCaption}\item[{array}]{\$migration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a database migration array to a form array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$migration} & The database migration array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The form array. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If the migration array is invalid. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_adeb464a0ccaaa8720db1879515779b6e}\label{classMigrationToFormArrayConverter_1_1MigrationToFormArrayConverter_adeb464a0ccaaa8720db1879515779b6e} 
+\index{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter@{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter}!convertPopulateRecords@{convertPopulateRecords}}
+\index{convertPopulateRecords@{convertPopulateRecords}!MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter@{MigrationToFormArrayConverter\textbackslash{}MigrationToFormArrayConverter}}
+\doxysubsubsection{\texorpdfstring{convertPopulateRecords()}{convertPopulateRecords()}}
+{\footnotesize\ttfamily static Migration\+To\+Form\+Array\+Converter\textbackslash{}\+Migration\+To\+Form\+Array\+Converter\+::convert\+Populate\+Records (\begin{DoxyParamCaption}\item[{array}]{\$migration,  }\item[{array}]{\$record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a database migration array to a form array and populates it with record data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$migration} & The database migration array. \\
+\hline
+array & {\em \$record} & An associative array representing the record to populate the form with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The populated form array. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If the migration array is invalid. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Migration\+To\+Form\+Array\+Converter/Migration\+To\+Form\+Array\+Converter.\+php\end{DoxyCompactItemize}

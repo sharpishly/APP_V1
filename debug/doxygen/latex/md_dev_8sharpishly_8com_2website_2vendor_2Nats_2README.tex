@@ -1,0 +1,64 @@
+\chapter{NATS Order Processing Example (PHP)}
+\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README}{}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README}\index{NATS Order Processing Example (PHP)@{NATS Order Processing Example (PHP)}}
+\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md101}%
+\Hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md101}%
+ This repository contains a PHP example demonstrating how to use NATS (Neural Autonomic Transport System) for order processing. It showcases publishing and subscribing to messages for handling customer orders.\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md102}{}\doxysection{\texorpdfstring{Overview}{Overview}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md102}
+This example simulates an order processing system where\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Publisher\+:}} A script publishes 100 customer order details to a NATS subject ({\ttfamily orders.\+process}).
+\item {\bfseries{Subscriber\+:}} A separate script subscribes to the {\ttfamily orders.\+process} subject, simulates order processing (CRM, payment), and publishes a response message.
+\item {\bfseries{Callbacks\+:}} The publisher uses callbacks to receive and handle order processing responses.
+\item {\bfseries{Asynchronous Processing\+:}} The subscriber runs in the background, allowing for asynchronous order processing.
+\end{DoxyEnumerate}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md103}{}\doxysection{\texorpdfstring{Requirements}{Requirements}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md103}
+
+\begin{DoxyItemize}
+\item PHP (with the {\ttfamily pcntl} extension for background processing on Unix-\/like systems)
+\item A running NATS server (default\+: {\ttfamily 127.\+0.\+0.\+1\+:4222})
+\item The {\ttfamily Nats.\+php} class (included in this repository)
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md104}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md104}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Clone the repository\+:}}
+
+{\ttfamily bash git clone \texorpdfstring{$<$}{<}repository\+\_\+url\texorpdfstring{$>$}{>} cd \texorpdfstring{$<$}{<}repository\+\_\+directory\texorpdfstring{$>$}{>} }
+\item {\bfseries{Ensure NATS Server is Running\+:}}
+
+Make sure you have a NATS server running. If you don\textquotesingle{}t have one installed, you can find installation instructions on the official NATS website.
+\end{DoxyEnumerate}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md105}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md105}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Run the script\+:}}
+
+{\ttfamily bash php order\+\_\+processing.\+php }
+\item {\bfseries{Observe the output\+:}}
+
+The script will output order processing results to the console. The subscriber runs in the background, and the publisher displays confirmations or errors as responses are received.
+\end{DoxyEnumerate}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md106}{}\doxysection{\texorpdfstring{Code Structure}{Code Structure}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md106}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily Nats.\+php}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Contains the custom NATS client class.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily order\+\_\+processing.\+php}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} The main script that includes the publisher and subscriber logic.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md107}{}\doxysection{\texorpdfstring{Key Concepts}{Key Concepts}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md107}
+
+\begin{DoxyItemize}
+\item {\bfseries{Publish-\/\+Subscribe (Pub/\+Sub)\+:}} The publisher publishes order details, and the subscriber receives them.
+\item {\bfseries{Request-\/\+Reply\+:}} The publisher uses a {\ttfamily reply\+To} subject to receive responses from the subscriber.
+\item {\bfseries{Asynchronous Processing\+:}} The subscriber processes orders in the background.
+\item {\bfseries{Callbacks\+:}} Callbacks are used to handle responses.
+\item {\bfseries{JSON Encoding\+:}} JSON is used for message payloads.
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily pcntl\+\_\+fork()}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Used to create a child process for the subscriber (Unix-\/like systems).
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily wait()}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Waits for all callbacks to finish.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md108}{}\doxysection{\texorpdfstring{Notes}{Notes}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md108}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}{\ttfamily pcntl\+\_\+fork()}\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} The {\ttfamily pcntl\+\_\+fork()} function is only available on Unix-\/like systems (Linux, mac\+OS). If you\textquotesingle{}re on Windows, you\textquotesingle{}ll need to use a different approach for running the subscriber in the background (e.\+g., separate terminal window, background process manager).
+\item {\bfseries{NATS Server\+:}} Ensure that a NATS server is running on {\ttfamily 127.\+0.\+0.\+1\+:4222}.
+\item {\bfseries{Error Handling\+:}} Implement more robust error handling and logging for production environments.
+\item {\bfseries{Real Processing\+:}} Replace the simulated order processing logic with your actual CRM and payment system integrations.
+\item {\bfseries{Timeout\+:}} Adjust the timeout in the publisher to suit your needs.
+\item {\bfseries{Resource Management\+:}} For a very large number of orders, consider adding resource management and batching techniques.
+\item {\bfseries{Nats.\+php}} This class is intended for demonstration purposes. For production use, please use the official Nats PHP library.
+\end{DoxyItemize}\hypertarget{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md109}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md_dev_8sharpishly_8com_2website_2vendor_2Nats_2README_autotoc_md109}
+Feel free to contribute to this project by submitting pull requests or opening issues. 

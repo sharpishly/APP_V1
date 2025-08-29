@@ -1,0 +1,52 @@
+\doxysection{Twitter Class Reference}
+\hypertarget{classTwitter}{}\label{classTwitter}\index{Twitter@{Twitter}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTwitter_a424928b8096e1203be8cfe90b9d02059}\label{classTwitter_a424928b8096e1203be8cfe90b9d02059} 
+{\bfseries \+\_\+\+\_\+construct} (\$api\+\_\+key, \$api\+\_\+secret, \$access\+\_\+token, \$access\+\_\+token\+\_\+secret)
+\item 
+\mbox{\hyperlink{classTwitter_a131c1f702100b5f4fe3c4a42f14e3a5f}{api\+Call}} (\$url, \$method=\textquotesingle{}GET\textquotesingle{}, \$params=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classTwitter_a28779c3aa24f69a78ab3380b4d75e5c2}{get\+User\+Timeline}} (\$screen\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTwitter_a131c1f702100b5f4fe3c4a42f14e3a5f}\label{classTwitter_a131c1f702100b5f4fe3c4a42f14e3a5f} 
+\index{Twitter@{Twitter}!apiCall@{apiCall}}
+\index{apiCall@{apiCall}!Twitter@{Twitter}}
+\doxysubsubsection{\texorpdfstring{apiCall()}{apiCall()}}
+{\footnotesize\ttfamily Twitter\+::api\+Call (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$method = {\ttfamily \textquotesingle{}GET\textquotesingle{}},  }\item[{}]{\$params = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Perform an API call to X/\+Twitter 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The endpoint URL \\
+\hline
+string & {\em \$method} & HTTP method (GET, POST, etc.) \\
+\hline
+array & {\em \$params} & Additional parameters for the request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null Decoded JSON response from the API 
+\end{DoxyReturn}
+\Hypertarget{classTwitter_a28779c3aa24f69a78ab3380b4d75e5c2}\label{classTwitter_a28779c3aa24f69a78ab3380b4d75e5c2} 
+\index{Twitter@{Twitter}!getUserTimeline@{getUserTimeline}}
+\index{getUserTimeline@{getUserTimeline}!Twitter@{Twitter}}
+\doxysubsubsection{\texorpdfstring{getUserTimeline()}{getUserTimeline()}}
+{\footnotesize\ttfamily Twitter\+::get\+User\+Timeline (\begin{DoxyParamCaption}\item[{}]{\$screen\+\_\+name }\end{DoxyParamCaption})}
+
+Fetch user timeline tweets 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$screen\+\_\+name} & The screen name of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Twitter/Twitter.\+php\end{DoxyCompactItemize}

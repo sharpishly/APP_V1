@@ -1,0 +1,93 @@
+\doxysection{Adobe\textbackslash{}Adobe\+Sign Class Reference}
+\hypertarget{classAdobe_1_1AdobeSign}{}\label{classAdobe_1_1AdobeSign}\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAdobe_1_1AdobeSign_a331048e67b8bc72c168cbf32021aab22}{\+\_\+\+\_\+construct}} (\$access\+Token)
+\item 
+\mbox{\hyperlink{classAdobe_1_1AdobeSign_ae19909324e7d331d8f719a5b90a7b678}{create\+Agreement}} (\$agreement\+Data)
+\item 
+\mbox{\hyperlink{classAdobe_1_1AdobeSign_afeee3bfa00e2b5d5fa7c21558f3070a2}{get\+Agreement}} (\$agreement\+Id)
+\item 
+\mbox{\hyperlink{classAdobe_1_1AdobeSign_a686868cdae1319b5b0b4d107d824387e}{send\+Agreement}} (\$agreement\+Id)
+\item 
+\mbox{\hyperlink{classAdobe_1_1AdobeSign_a5ea5c1ae4807b8e38835388016b80437}{download\+Signed\+Documents}} (\$agreement\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAdobe_1_1AdobeSign_a331048e67b8bc72c168cbf32021aab22}\label{classAdobe_1_1AdobeSign_a331048e67b8bc72c168cbf32021aab22} 
+\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Adobe\textbackslash{}\+Adobe\+Sign\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$access\+Token }\end{DoxyParamCaption})}
+
+Constructor for Adobe\+Sign class 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$access\+Token} & OAuth2 access token for authentication \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAdobe_1_1AdobeSign_ae19909324e7d331d8f719a5b90a7b678}\label{classAdobe_1_1AdobeSign_ae19909324e7d331d8f719a5b90a7b678} 
+\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}!createAgreement@{createAgreement}}
+\index{createAgreement@{createAgreement}!Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection{\texorpdfstring{createAgreement()}{createAgreement()}}
+{\footnotesize\ttfamily Adobe\textbackslash{}\+Adobe\+Sign\+::create\+Agreement (\begin{DoxyParamCaption}\item[{}]{\$agreement\+Data }\end{DoxyParamCaption})}
+
+Create an agreement for signing 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$agreement\+Data} & Data for creating an agreement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Response from Adobe Sign API 
+\end{DoxyReturn}
+\Hypertarget{classAdobe_1_1AdobeSign_a5ea5c1ae4807b8e38835388016b80437}\label{classAdobe_1_1AdobeSign_a5ea5c1ae4807b8e38835388016b80437} 
+\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}!downloadSignedDocuments@{downloadSignedDocuments}}
+\index{downloadSignedDocuments@{downloadSignedDocuments}!Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection{\texorpdfstring{downloadSignedDocuments()}{downloadSignedDocuments()}}
+{\footnotesize\ttfamily Adobe\textbackslash{}\+Adobe\+Sign\+::download\+Signed\+Documents (\begin{DoxyParamCaption}\item[{}]{\$agreement\+Id }\end{DoxyParamCaption})}
+
+Download signed documents of an agreement 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$agreement\+Id} & ID of the agreement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Content of the signed documents or error message 
+\end{DoxyReturn}
+\Hypertarget{classAdobe_1_1AdobeSign_afeee3bfa00e2b5d5fa7c21558f3070a2}\label{classAdobe_1_1AdobeSign_afeee3bfa00e2b5d5fa7c21558f3070a2} 
+\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}!getAgreement@{getAgreement}}
+\index{getAgreement@{getAgreement}!Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection{\texorpdfstring{getAgreement()}{getAgreement()}}
+{\footnotesize\ttfamily Adobe\textbackslash{}\+Adobe\+Sign\+::get\+Agreement (\begin{DoxyParamCaption}\item[{}]{\$agreement\+Id }\end{DoxyParamCaption})}
+
+Get details of an agreement 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$agreement\+Id} & ID of the agreement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Agreement details 
+\end{DoxyReturn}
+\Hypertarget{classAdobe_1_1AdobeSign_a686868cdae1319b5b0b4d107d824387e}\label{classAdobe_1_1AdobeSign_a686868cdae1319b5b0b4d107d824387e} 
+\index{Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}!sendAgreement@{sendAgreement}}
+\index{sendAgreement@{sendAgreement}!Adobe\textbackslash{}AdobeSign@{Adobe\textbackslash{}AdobeSign}}
+\doxysubsubsection{\texorpdfstring{sendAgreement()}{sendAgreement()}}
+{\footnotesize\ttfamily Adobe\textbackslash{}\+Adobe\+Sign\+::send\+Agreement (\begin{DoxyParamCaption}\item[{}]{\$agreement\+Id }\end{DoxyParamCaption})}
+
+Send an agreement for signing 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$agreement\+Id} & ID of the agreement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Response from Adobe Sign API 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Adobe/Adobe.\+php\end{DoxyCompactItemize}

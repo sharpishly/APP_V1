@@ -1,0 +1,82 @@
+\doxysection{Sync\+File\textbackslash{}Sync\+File Class Reference}
+\hypertarget{classSyncFile_1_1SyncFile}{}\label{classSyncFile_1_1SyncFile}\index{SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSyncFile_1_1SyncFile_afaea04855443700c4160dc98177a29d9}{\+\_\+\+\_\+construct}} (string \$upload\+Dir, int \$max\+File\+Size, array \$allowed\+Types)
+\item 
+\mbox{\hyperlink{classSyncFile_1_1SyncFile_a370a767cfdf6c3a04d1e61d23a528ccc}{get\+Errors}} ()
+\item 
+\mbox{\hyperlink{classSyncFile_1_1SyncFile_ad16bb451b4049ea5bb16b82d431f8b40}{get\+Uploaded\+File\+Info}} ()
+\item 
+\mbox{\hyperlink{classSyncFile_1_1SyncFile_abb5d129cda1c008816c3976717f6137b}{handle\+Upload}} (string \$input\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Sync\+File Handles file uploads, validation, and moving files to a permanent location. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSyncFile_1_1SyncFile_afaea04855443700c4160dc98177a29d9}\label{classSyncFile_1_1SyncFile_afaea04855443700c4160dc98177a29d9} 
+\index{SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Sync\+File\textbackslash{}\+Sync\+File\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{string}]{\$upload\+Dir,  }\item[{int}]{\$max\+File\+Size,  }\item[{array}]{\$allowed\+Types }\end{DoxyParamCaption})}
+
+Constructor for the Sync\+File class.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$upload\+Dir} & The directory where files will be permanently stored. This directory must exist and be writable by the web server. \\
+\hline
+int & {\em \$max\+File\+Size} & The maximum allowed file size in bytes (e.\+g., 5 \texorpdfstring{$\ast$}{*} 1024 \texorpdfstring{$\ast$}{*} 1024 for 5MB). \\
+\hline
+array & {\em \$allowed\+Types} & An array of allowed MIME types (e.\+g., \mbox{[}\textquotesingle{}application/pdf\textquotesingle{}, \textquotesingle{}image/jpeg\textquotesingle{}\mbox{]}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSyncFile_1_1SyncFile_a370a767cfdf6c3a04d1e61d23a528ccc}\label{classSyncFile_1_1SyncFile_a370a767cfdf6c3a04d1e61d23a528ccc} 
+\index{SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}!getErrors@{getErrors}}
+\index{getErrors@{getErrors}!SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}}
+\doxysubsubsection{\texorpdfstring{getErrors()}{getErrors()}}
+{\footnotesize\ttfamily Sync\+File\textbackslash{}\+Sync\+File\+::get\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns an array of all collected error messages.
+
+\begin{DoxyReturn}{Returns}
+array An array of error strings. 
+\end{DoxyReturn}
+\Hypertarget{classSyncFile_1_1SyncFile_ad16bb451b4049ea5bb16b82d431f8b40}\label{classSyncFile_1_1SyncFile_ad16bb451b4049ea5bb16b82d431f8b40} 
+\index{SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}!getUploadedFileInfo@{getUploadedFileInfo}}
+\index{getUploadedFileInfo@{getUploadedFileInfo}!SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}}
+\doxysubsubsection{\texorpdfstring{getUploadedFileInfo()}{getUploadedFileInfo()}}
+{\footnotesize\ttfamily Sync\+File\textbackslash{}\+Sync\+File\+::get\+Uploaded\+File\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns information about the successfully uploaded file.
+
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null An array containing \textquotesingle{}name\textquotesingle{}, \textquotesingle{}type\textquotesingle{}, \textquotesingle{}size\textquotesingle{}, \textquotesingle{}path\textquotesingle{} of the uploaded file, or null if no file was successfully uploaded. 
+\end{DoxyReturn}
+\Hypertarget{classSyncFile_1_1SyncFile_abb5d129cda1c008816c3976717f6137b}\label{classSyncFile_1_1SyncFile_abb5d129cda1c008816c3976717f6137b} 
+\index{SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}!handleUpload@{handleUpload}}
+\index{handleUpload@{handleUpload}!SyncFile\textbackslash{}SyncFile@{SyncFile\textbackslash{}SyncFile}}
+\doxysubsubsection{\texorpdfstring{handleUpload()}{handleUpload()}}
+{\footnotesize\ttfamily Sync\+File\textbackslash{}\+Sync\+File\+::handle\+Upload (\begin{DoxyParamCaption}\item[{string}]{\$input\+Name }\end{DoxyParamCaption})}
+
+Handles the file upload process.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$input\+Name} & The \textquotesingle{}name\textquotesingle{} attribute of the file input field (e.\+g., \textquotesingle{}my\+File\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on successful upload and move, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Sync\+File/Sync\+File.\+php\end{DoxyCompactItemize}

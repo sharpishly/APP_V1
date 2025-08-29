@@ -1,0 +1,89 @@
+\doxysection{Zoho\textbackslash{}Zoho Class Reference}
+\hypertarget{classZoho_1_1Zoho}{}\label{classZoho_1_1Zoho}\index{Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classZoho_1_1Zoho_ae52e7a27b418f98917239668515554af}{\+\_\+\+\_\+construct}} (\$client\+Id, \$client\+Secret, \$refresh\+Token, \$api\+Domain=\textquotesingle{}https\+://mail.\+zoho.\+com\textquotesingle{})
+\item 
+\mbox{\hyperlink{classZoho_1_1Zoho_a0097df06d993b167cc54efa5aafaf0e0}{send\+Email}} (\$from\+Address, \$to\+Address, \$subject, \$content, \$cc\+Address=null, \$bcc\+Address=null)
+\item 
+\mbox{\hyperlink{classZoho_1_1Zoho_a8f6cda747ca378bc4066d40880761534}{receive\+Emails}} (\$limit=10, \$folder\+Id=null)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classZoho_1_1Zoho_ae52e7a27b418f98917239668515554af}\label{classZoho_1_1Zoho_ae52e7a27b418f98917239668515554af} 
+\index{Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Zoho\textbackslash{}\+Zoho\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$client\+Id,  }\item[{}]{\$client\+Secret,  }\item[{}]{\$refresh\+Token,  }\item[{}]{\$api\+Domain = {\ttfamily \textquotesingle{}https\+://mail.zoho.com\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Constructor to initialize Zoho API credentials and domain 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$client\+Id} & Zoho API Client ID \\
+\hline
+string & {\em \$client\+Secret} & Zoho API Client Secret \\
+\hline
+string & {\em \$refresh\+Token} & Zoho API Refresh Token \\
+\hline
+string & {\em \$api\+Domain} & Zoho API domain (e.\+g., \textquotesingle{}\href{https://mail.zoho.com'}{\texttt{ https\+://mail.\+zoho.\+com\textquotesingle{}}}) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classZoho_1_1Zoho_a8f6cda747ca378bc4066d40880761534}\label{classZoho_1_1Zoho_a8f6cda747ca378bc4066d40880761534} 
+\index{Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}!receiveEmails@{receiveEmails}}
+\index{receiveEmails@{receiveEmails}!Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}}
+\doxysubsubsection{\texorpdfstring{receiveEmails()}{receiveEmails()}}
+{\footnotesize\ttfamily Zoho\textbackslash{}\+Zoho\+::receive\+Emails (\begin{DoxyParamCaption}\item[{}]{\$limit = {\ttfamily 10},  }\item[{}]{\$folder\+Id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Fetch received emails from Zoho Mail 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$limit} & Number of emails to fetch (default\+: 10) \\
+\hline
+string | null & {\em \$folder\+Id} & Folder ID to fetch emails from (optional) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array List of emails 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & on failure \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classZoho_1_1Zoho_a0097df06d993b167cc54efa5aafaf0e0}\label{classZoho_1_1Zoho_a0097df06d993b167cc54efa5aafaf0e0} 
+\index{Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}!sendEmail@{sendEmail}}
+\index{sendEmail@{sendEmail}!Zoho\textbackslash{}Zoho@{Zoho\textbackslash{}Zoho}}
+\doxysubsubsection{\texorpdfstring{sendEmail()}{sendEmail()}}
+{\footnotesize\ttfamily Zoho\textbackslash{}\+Zoho\+::send\+Email (\begin{DoxyParamCaption}\item[{}]{\$from\+Address,  }\item[{}]{\$to\+Address,  }\item[{}]{\$subject,  }\item[{}]{\$content,  }\item[{}]{\$cc\+Address = {\ttfamily null},  }\item[{}]{\$bcc\+Address = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Send an email using Zoho Mail API 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$from\+Address} & Sender email address \\
+\hline
+string & {\em \$to\+Address} & Recipient email address \\
+\hline
+string & {\em \$subject} & Email subject \\
+\hline
+string & {\em \$content} & Email body (HTML or plain text) \\
+\hline
+string | null & {\em \$cc\+Address} & CC recipient email address (optional) \\
+\hline
+string | null & {\em \$bcc\+Address} & BCC recipient email address (optional) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Response from API 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & on failure \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Zoho/Zoho.\+php\end{DoxyCompactItemize}

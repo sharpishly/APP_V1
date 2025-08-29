@@ -1,0 +1,115 @@
+\doxysection{Linked\+In\textbackslash{}Linked\+In\textbackslash{}Linked\+In Class Reference}
+\hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn}{}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn}\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a19decac7efc26c2bec9589e27599ff36}{\+\_\+\+\_\+construct}} (\$client\+Id, \$client\+Secret, \$redirect\+Uri)
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ab10207479cc3ee7cedcd62dd0d132f20}{get\+Login\+Url}} (\$scopes=\mbox{[}\textquotesingle{}r\+\_\+liteprofile\textquotesingle{}, \textquotesingle{}r\+\_\+emailaddress\textquotesingle{}, \textquotesingle{}w\+\_\+member\+\_\+social\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_aedd97c74f225b81d4dd7ba45c2f67812}{get\+Access\+Token}} (\$code)
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ae29fdaf8614c37ca3ef0ccb286c41c36}{register\+User}} (\$user\+Data)
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_af95b0cd0673a956e6343cfe1b25d2770}{get\+Latest\+Jobs}} (\$limit=10)
+\item 
+\mbox{\hyperlink{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a937beebea57acdc2514ee648264e23ea}{apply\+For\+Job}} (\$job\+Id, \$application\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a19decac7efc26c2bec9589e27599ff36}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a19decac7efc26c2bec9589e27599ff36} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$client\+Id,  }\item[{}]{\$client\+Secret,  }\item[{}]{\$redirect\+Uri }\end{DoxyParamCaption})}
+
+Constructor to initialize Linked\+In API credentials 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$client\+Id} & Linked\+In App Client ID \\
+\hline
+string & {\em \$client\+Secret} & Linked\+In App Client Secret \\
+\hline
+string & {\em \$redirect\+Uri} & Redirect URI registered in Linked\+In Developer Portal \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a937beebea57acdc2514ee648264e23ea}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_a937beebea57acdc2514ee648264e23ea} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!applyForJob@{applyForJob}}
+\index{applyForJob@{applyForJob}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{applyForJob()}{applyForJob()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::apply\+For\+Job (\begin{DoxyParamCaption}\item[{}]{\$job\+Id,  }\item[{}]{\$application\+Data }\end{DoxyParamCaption})}
+
+Apply for a job on behalf of the user 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$job\+Id} & Job ID to apply for \\
+\hline
+array & {\em \$application\+Data} & Application data (e.\+g., resume, cover letter) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}bool Application response or false on failure 
+\end{DoxyReturn}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_aedd97c74f225b81d4dd7ba45c2f67812}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_aedd97c74f225b81d4dd7ba45c2f67812} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!getAccessToken@{getAccessToken}}
+\index{getAccessToken@{getAccessToken}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{getAccessToken()}{getAccessToken()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::get\+Access\+Token (\begin{DoxyParamCaption}\item[{}]{\$code }\end{DoxyParamCaption})}
+
+Exchange authorization code for access token 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$code} & Authorization code from Linked\+In \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}bool Access token data or false on failure 
+\end{DoxyReturn}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_af95b0cd0673a956e6343cfe1b25d2770}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_af95b0cd0673a956e6343cfe1b25d2770} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!getLatestJobs@{getLatestJobs}}
+\index{getLatestJobs@{getLatestJobs}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{getLatestJobs()}{getLatestJobs()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::get\+Latest\+Jobs (\begin{DoxyParamCaption}\item[{}]{\$limit = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Retrieve latest job postings 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$limit} & Number of jobs to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}bool Job listings or false on failure 
+\end{DoxyReturn}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ab10207479cc3ee7cedcd62dd0d132f20}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ab10207479cc3ee7cedcd62dd0d132f20} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!getLoginUrl@{getLoginUrl}}
+\index{getLoginUrl@{getLoginUrl}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{getLoginUrl()}{getLoginUrl()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::get\+Login\+Url (\begin{DoxyParamCaption}\item[{}]{\$scopes = {\ttfamily \mbox{[}\textquotesingle{}r\+\_\+liteprofile\textquotesingle{},~\textquotesingle{}r\+\_\+emailaddress\textquotesingle{},~\textquotesingle{}w\+\_\+member\+\_\+social\textquotesingle{}\mbox{]}} }\end{DoxyParamCaption})}
+
+Get Linked\+In authorization URL for user login 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$scopes} & Permissions to request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Authorization URL 
+\end{DoxyReturn}
+\Hypertarget{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ae29fdaf8614c37ca3ef0ccb286c41c36}\label{classLinkedIn_1_1LinkedIn_1_1LinkedIn_ae29fdaf8614c37ca3ef0ccb286c41c36} 
+\index{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn@{LinkedIn\textbackslash{}LinkedIn\textbackslash{}LinkedIn}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily Linked\+In\textbackslash{}\+Linked\+In\textbackslash{}\+Linked\+In\+::register\+User (\begin{DoxyParamCaption}\item[{}]{\$user\+Data }\end{DoxyParamCaption})}
+
+Register a new user on Linked\+In 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$user\+Data} & User data (first\+Name, last\+Name, email, password) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}bool Registration response or false on failure 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Linked\+In/Linked\+In.\+php\end{DoxyCompactItemize}

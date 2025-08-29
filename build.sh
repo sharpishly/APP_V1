@@ -49,7 +49,7 @@ cat <<EOF > "$DEBUG_FILE"
 EOF
 
 # ------------------------------
-# Setup local SSL for *.sharpishly.dev
+# Setup local SSL for *.sharpishly.dev (for future HTTPS)
 # ------------------------------
 echo ">>> Setting up local SSL for *.sharpishly.dev..."
 CERT_DIR="./certs"
@@ -78,6 +78,40 @@ ls -l "$CERT_DIR" >> "$DEBUG_FILE"
 echo "</pre>" >> "$DEBUG_FILE"
 
 # ------------------------------
+# Create PHP-FPM configuration
+# ------------------------------
+echo ">>> Setting up PHP-FPM configuration..."
+PHP_FPM_DIR="php-fpm"
+PHP_FPM_CONF="$PHP_FPM_DIR/www.conf"
+if [ ! -d "$PHP_FPM_DIR" ]; then
+    echo ">>> Creating PHP-FPM directory: $PHP_FPM_DIR"
+    mkdir -p "$PHP_FPM_DIR"
+fi
+if [ ! -f "$PHP_FPM_CONF" ]; then
+    echo ">>> Creating PHP-FPM config: $PHP_FPM_CONF"
+    cat <<EOC > "$PHP_FPM_CONF"
+[www]
+user = www-data
+group = www-data
+listen = 0.0.0.0:9000
+listen.owner = www-data
+listen.group = www-data
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+EOC
+    chown "$USER_NAME:$GROUP_NAME" "$PHP_FPM_CONF"
+    chmod 644 "$PHP_FPM_CONF"
+else
+    echo ">>> PHP-FPM config already exists at $PHP_FPM_CONF"
+fi
+echo "<h2>PHP-FPM Config</h2><pre>" >> "$DEBUG_FILE"
+cat "$PHP_FPM_CONF" >> "$DEBUG_FILE"
+echo "</pre>" >> "$DEBUG_FILE"
+
+# ------------------------------
 # Docker cleanup
 # ------------------------------
 echo ">>> Stopping containers and cleaning up..."
@@ -92,12 +126,12 @@ docker network prune -f
 # ------------------------------
 # Check port usage
 # ------------------------------
-echo ">>> Checking port 80 and 443 usage..."
+echo ">>> Checking port 80 usage..."
 echo "<h2>Port Usage</h2><pre>" >> "$DEBUG_FILE"
 if command -v ss &> /dev/null; then
-    sudo ss -tulnp | grep -E ':80|:443' || echo "Ports 80 and 443 are free ✅" >> "$DEBUG_FILE"
+    sudo ss -tulnp | grep -E ':80' || echo "Port 80 is free ✅" >> "$DEBUG_FILE"
 else
-    sudo netstat -tulnp | grep -E ':80|:443' || echo "Ports 80 and 443 are free ✅" >> "$DEBUG_FILE"
+    sudo netstat -tulnp | grep -E ':80' || echo "Port 80 is free ✅" >> "$DEBUG_FILE"
 fi
 echo "</pre>" >> "$DEBUG_FILE"
 
@@ -198,7 +232,6 @@ echo "</pre>" >> "$DEBUG_FILE"
 # ------------------------------
 echo ">>> Configure firewall rules..."
 sudo ufw status | grep -q "80/tcp" || sudo ufw allow 80
-sudo ufw status | grep -q "443/tcp" || sudo ufw allow 443
 sudo ufw reload
 echo "<h2>Firewall Status</h2><pre>" >> "$DEBUG_FILE"
 sudo ufw status >> "$DEBUG_FILE"
@@ -242,11 +275,11 @@ for HOST in "${HOSTNAMES[@]}"; do
 done
 
 # ------------------------------
-# Testing HTTPS
+# Testing HTTP
 # ------------------------------
 echo ">>> Testing sharpishly.dev..."
-echo "<h2>HTTPS Test (sharpishly.dev)</h2><pre>" >> "$DEBUG_FILE"
-curl -vk https://sharpishly.dev 2>&1 >> "$DEBUG_FILE"
+echo "<h2>HTTP Test (sharpishly.dev)</h2><pre>" >> "$DEBUG_FILE"
+curl -k http://sharpishly.dev 2>&1 >> "$DEBUG_FILE"
 echo "</pre>" >> "$DEBUG_FILE"
 
 # Close HTML

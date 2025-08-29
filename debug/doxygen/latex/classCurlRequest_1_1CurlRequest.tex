@@ -1,0 +1,48 @@
+\doxysection{Curl\+Request\textbackslash{}Curl\+Request Class Reference}
+\hypertarget{classCurlRequest_1_1CurlRequest}{}\label{classCurlRequest_1_1CurlRequest}\index{CurlRequest\textbackslash{}CurlRequest@{CurlRequest\textbackslash{}CurlRequest}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classCurlRequest_1_1CurlRequest_a97e874f23106f3ec2c63efbdb40af9db}{send}} (string \$url, string \$method=\textquotesingle{}GET\textquotesingle{}, array \$options=\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A standalone class for making HTTP requests using c\+URL. This class centralizes all HTTP requests and does not rely on any external libraries. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCurlRequest_1_1CurlRequest_a97e874f23106f3ec2c63efbdb40af9db}\label{classCurlRequest_1_1CurlRequest_a97e874f23106f3ec2c63efbdb40af9db} 
+\index{CurlRequest\textbackslash{}CurlRequest@{CurlRequest\textbackslash{}CurlRequest}!send@{send}}
+\index{send@{send}!CurlRequest\textbackslash{}CurlRequest@{CurlRequest\textbackslash{}CurlRequest}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily static Curl\+Request\textbackslash{}\+Curl\+Request\+::send (\begin{DoxyParamCaption}\item[{string}]{\$url,  }\item[{string}]{\$method = {\ttfamily \textquotesingle{}GET\textquotesingle{}},  }\item[{array}]{\$options = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sends an HTTP request. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The URL to send the request to. \\
+\hline
+string & {\em \$method} & The HTTP method (e.\+g., \textquotesingle{}GET\textquotesingle{}, \textquotesingle{}POST\textquotesingle{}, \textquotesingle{}PUT\textquotesingle{}, \textquotesingle{}DELETE\textquotesingle{}). \\
+\hline
+array & {\em \$options} & An array of options to configure the request\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}headers\textquotesingle{} (array, optional)\+: An array of HTTP headers (e.\+g., \mbox{[}\textquotesingle{}Content-\/\+Type\+: application/json\textquotesingle{}\mbox{]}).
+\item \textquotesingle{}body\textquotesingle{} (string\texorpdfstring{$\vert$}{|}array, optional)\+: The request body for POST, PUT, etc. Will be JSON-\/encoded if an array.
+\item \textquotesingle{}timeout\textquotesingle{} (int, optional)\+: The request timeout in seconds (default\+: 30).
+\item \textquotesingle{}connect\+\_\+timeout\textquotesingle{} (int, optional)\+: The connection timeout in seconds (default\+: 10).
+\item \textquotesingle{}verify\+\_\+ssl\textquotesingle{} (bool, optional)\+: Whether to verify SSL certificates (default\+: true). 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The response data, including \textquotesingle{}body\textquotesingle{}, \textquotesingle{}headers\textquotesingle{}, and \textquotesingle{}status\textquotesingle{}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & on error \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Curl\+Request/Curl\+Request.\+php\end{DoxyCompactItemize}

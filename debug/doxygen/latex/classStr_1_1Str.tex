@@ -1,0 +1,293 @@
+\doxysection{Str\textbackslash{}Str Class Reference}
+\hypertarget{classStr_1_1Str}{}\label{classStr_1_1Str}\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_af440119b91ebd61a3fcdebd5ab5a8f11}{random}} (int \$length, string \$characters=\textquotesingle{}0123456789abcdefghijklmnopqrstuvwxyz\+ABCDEFGHIJKLMNOPQRSTUVWXYZ\textquotesingle{})
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a50c437265f88a55677b7fc2dcb84902b}{snake}} (string \$value, string \$separator=\textquotesingle{}\+\_\+\textquotesingle{})
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a25f5929a8706b718e323ffe425903349}{camel}} (string \$value)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_ade468d79df4bfb6ad637ec06429fc43d}{title}} (string \$value)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a5d27faded535b921dbef02dccd0cc991}{starts\+With}} (string \$haystack, \$needle)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a68cde29a820692d7a134a4b7cedb01b0}{ends\+With}} (string \$haystack, \$needle)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a74f8513201b5bc2c3442c42caef928ca}{contains}} (string \$haystack, \$needle)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_aed5dabaea652bf87a9df4b6bbfcb514d}{limit}} (string \$value, int \$limit=100, string \$end=\textquotesingle{}...\textquotesingle{})
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a2531db0417ca29583f5f3771de69b447}{substr}} (string \$string, int \$start, ?int \$length=null)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a764eb09fcddc43766491763a0f2c4e13}{replace\+First}} (string \$search, string \$replace, string \$subject)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_ad08b388be5a33f581c8d9525bd7df3e3}{replace\+Last}} (string \$search, string \$replace, string \$subject)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_aedf8d959dec09632da7afbc80e2bf8e5}{remove\+Start}} (string \$string, string \$remove)
+\item 
+static \mbox{\hyperlink{classStr_1_1Str_a1a7e253ba46a6d29ab73bce4295af174}{remove\+End}} (string \$string, string \$remove)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+String manipulation class for a custom PHP framework.
+
+This class provides static methods for common string operations, designed to be used without external libraries. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStr_1_1Str_a25f5929a8706b718e323ffe425903349}\label{classStr_1_1Str_a25f5929a8706b718e323ffe425903349} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!camel@{camel}}
+\index{camel@{camel}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{camel()}{camel()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::camel (\begin{DoxyParamCaption}\item[{string}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convert a string to camel case.
+
+Example\+: "{}snake\+\_\+case\+\_\+string"{} becomes "{}snake\+Case\+String"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & The string to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The camel case string. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a74f8513201b5bc2c3442c42caef928ca}\label{classStr_1_1Str_a74f8513201b5bc2c3442c42caef928ca} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!contains@{contains}}
+\index{contains@{contains}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::contains (\begin{DoxyParamCaption}\item[{string}]{\$haystack,  }\item[{}]{\$needle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Determine if a string contains a given substring.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$haystack} & The string to search in. \\
+\hline
+string | array & {\em \$needle} & The substring(s) to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the string contains the substring, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a68cde29a820692d7a134a4b7cedb01b0}\label{classStr_1_1Str_a68cde29a820692d7a134a4b7cedb01b0} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!endsWith@{endsWith}}
+\index{endsWith@{endsWith}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{endsWith()}{endsWith()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::ends\+With (\begin{DoxyParamCaption}\item[{string}]{\$haystack,  }\item[{}]{\$needle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if a string ends with a given substring.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$haystack} & The string to search in. \\
+\hline
+string | array & {\em \$needle} & The substring(s) to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the string ends with the substring, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_aed5dabaea652bf87a9df4b6bbfcb514d}\label{classStr_1_1Str_aed5dabaea652bf87a9df4b6bbfcb514d} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!limit@{limit}}
+\index{limit@{limit}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{limit()}{limit()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::limit (\begin{DoxyParamCaption}\item[{string}]{\$value,  }\item[{int}]{\$limit = {\ttfamily 100},  }\item[{string}]{\$end = {\ttfamily \textquotesingle{}...\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Limits the number of characters in a string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & The string to limit. \\
+\hline
+int & {\em \$limit} & The maximum number of characters. \\
+\hline
+string & {\em \$end} & The string that\textquotesingle{}s appended to the end. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The limited string. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_af440119b91ebd61a3fcdebd5ab5a8f11}\label{classStr_1_1Str_af440119b91ebd61a3fcdebd5ab5a8f11} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!random@{random}}
+\index{random@{random}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{random()}{random()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::random (\begin{DoxyParamCaption}\item[{int}]{\$length,  }\item[{string}]{\$characters = {\ttfamily \textquotesingle{}0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a random string of a specified length.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$length} & The length of the desired string. \\
+\hline
+string & {\em \$characters} & The character set to use (optional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The random string. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+Exception If \$length is less than 1. \Hypertarget{classStr_1_1Str_a1a7e253ba46a6d29ab73bce4295af174}\label{classStr_1_1Str_a1a7e253ba46a6d29ab73bce4295af174} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!removeEnd@{removeEnd}}
+\index{removeEnd@{removeEnd}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{removeEnd()}{removeEnd()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::remove\+End (\begin{DoxyParamCaption}\item[{string}]{\$string,  }\item[{string}]{\$remove }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Remove a substring from the end of a string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The original string. \\
+\hline
+string & {\em \$remove} & The string to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The string with the suffix removed. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_aedf8d959dec09632da7afbc80e2bf8e5}\label{classStr_1_1Str_aedf8d959dec09632da7afbc80e2bf8e5} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!removeStart@{removeStart}}
+\index{removeStart@{removeStart}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{removeStart()}{removeStart()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::remove\+Start (\begin{DoxyParamCaption}\item[{string}]{\$string,  }\item[{string}]{\$remove }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Remove a substring from the beginning of a string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The original string. \\
+\hline
+string & {\em \$remove} & The string to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The string with the prefix removed. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a764eb09fcddc43766491763a0f2c4e13}\label{classStr_1_1Str_a764eb09fcddc43766491763a0f2c4e13} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!replaceFirst@{replaceFirst}}
+\index{replaceFirst@{replaceFirst}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{replaceFirst()}{replaceFirst()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::replace\+First (\begin{DoxyParamCaption}\item[{string}]{\$search,  }\item[{string}]{\$replace,  }\item[{string}]{\$subject }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Replace the first occurrence of a string within another string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$search} & The string to search for. \\
+\hline
+string & {\em \$replace} & The string to replace with. \\
+\hline
+string & {\em \$subject} & The string to search in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The string with the replacement applied. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_ad08b388be5a33f581c8d9525bd7df3e3}\label{classStr_1_1Str_ad08b388be5a33f581c8d9525bd7df3e3} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!replaceLast@{replaceLast}}
+\index{replaceLast@{replaceLast}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{replaceLast()}{replaceLast()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::replace\+Last (\begin{DoxyParamCaption}\item[{string}]{\$search,  }\item[{string}]{\$replace,  }\item[{string}]{\$subject }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Replace the last occurrence of a string within another string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$search} & The string to search for. \\
+\hline
+string & {\em \$replace} & The string to replace with. \\
+\hline
+string & {\em \$subject} & The string to search in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The string with the replacement applied. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a50c437265f88a55677b7fc2dcb84902b}\label{classStr_1_1Str_a50c437265f88a55677b7fc2dcb84902b} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!snake@{snake}}
+\index{snake@{snake}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{snake()}{snake()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::snake (\begin{DoxyParamCaption}\item[{string}]{\$value,  }\item[{string}]{\$separator = {\ttfamily \textquotesingle{}\+\_\+\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convert a string to snake case.
+
+Example\+: "{}camel\+Case\+String"{} becomes "{}camel\+\_\+case\+\_\+string"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & The string to convert. \\
+\hline
+string & {\em \$separator} & The separator to use (default\+: \textquotesingle{}\+\_\+\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The snake case string. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a5d27faded535b921dbef02dccd0cc991}\label{classStr_1_1Str_a5d27faded535b921dbef02dccd0cc991} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!startsWith@{startsWith}}
+\index{startsWith@{startsWith}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{startsWith()}{startsWith()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::starts\+With (\begin{DoxyParamCaption}\item[{string}]{\$haystack,  }\item[{}]{\$needle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if a string starts with a given substring.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$haystack} & The string to search in. \\
+\hline
+string | array & {\em \$needle} & The substring(s) to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the string starts with the substring, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_a2531db0417ca29583f5f3771de69b447}\label{classStr_1_1Str_a2531db0417ca29583f5f3771de69b447} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!substr@{substr}}
+\index{substr@{substr}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::substr (\begin{DoxyParamCaption}\item[{string}]{\$string,  }\item[{int}]{\$start,  }\item[{?int}]{\$length = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the portion of string specified by the start and length parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The input string. \\
+\hline
+int & {\em \$start} & The starting position. \\
+\hline
+int | null & {\em \$length} & The maximum length of the substring to return. If NULL, the remainder of the string is returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classStr_1_1Str_ade468d79df4bfb6ad637ec06429fc43d}\label{classStr_1_1Str_ade468d79df4bfb6ad637ec06429fc43d} 
+\index{Str\textbackslash{}Str@{Str\textbackslash{}Str}!title@{title}}
+\index{title@{title}!Str\textbackslash{}Str@{Str\textbackslash{}Str}}
+\doxysubsubsection{\texorpdfstring{title()}{title()}}
+{\footnotesize\ttfamily static Str\textbackslash{}\+Str\+::title (\begin{DoxyParamCaption}\item[{string}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convert a string to title case.
+
+Example\+: "{}a title case string"{} becomes "{}\+A Title Case String"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & The string to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The title case string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Str/Str.\+php\end{DoxyCompactItemize}

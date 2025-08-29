@@ -1,0 +1,113 @@
+\doxysection{Icloud\textbackslash{}Icloud Class Reference}
+\hypertarget{classIcloud_1_1Icloud}{}\label{classIcloud_1_1Icloud}\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_a39dc038fd4a2be0b1c2c87c3807ecbe9}{\+\_\+\+\_\+construct}} (string \$username, string \$password)
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_a1ac863c42e5ee11409b789d9eb74322c}{get\+Contacts}} ()
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_af8bd5bb63c0c655052dc4f210039631b}{get\+Calendar}} ()
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_a729c158dc265b60741d8d1bbaf8e2d9f}{upload\+File}} (string \$file\+Path)
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_a5718135afea0950451e5492d6ff598c4}{download\+File}} (string \$file\+Id)
+\item 
+\mbox{\hyperlink{classIcloud_1_1Icloud_adbd978890343fd7a3ea23e4cdca2cccc}{delete\+File}} (string \$file\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIcloud_1_1Icloud_a39dc038fd4a2be0b1c2c87c3807ecbe9}\label{classIcloud_1_1Icloud_a39dc038fd4a2be0b1c2c87c3807ecbe9} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{string}]{\$username,  }\item[{string}]{\$password }\end{DoxyParamCaption})}
+
+Constructor to initialize i\+Cloud session.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & \\
+\hline
+string & {\em \$password} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIcloud_1_1Icloud_adbd978890343fd7a3ea23e4cdca2cccc}\label{classIcloud_1_1Icloud_adbd978890343fd7a3ea23e4cdca2cccc} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!deleteFile@{deleteFile}}
+\index{deleteFile@{deleteFile}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{deleteFile()}{deleteFile()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::delete\+File (\begin{DoxyParamCaption}\item[{string}]{\$file\+Id }\end{DoxyParamCaption})}
+
+Deletes a file from i\+Cloud.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+\Hypertarget{classIcloud_1_1Icloud_a5718135afea0950451e5492d6ff598c4}\label{classIcloud_1_1Icloud_a5718135afea0950451e5492d6ff598c4} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!downloadFile@{downloadFile}}
+\index{downloadFile@{downloadFile}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{downloadFile()}{downloadFile()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::download\+File (\begin{DoxyParamCaption}\item[{string}]{\$file\+Id }\end{DoxyParamCaption})}
+
+Downloads a file from i\+Cloud.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+\Hypertarget{classIcloud_1_1Icloud_af8bd5bb63c0c655052dc4f210039631b}\label{classIcloud_1_1Icloud_af8bd5bb63c0c655052dc4f210039631b} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!getCalendar@{getCalendar}}
+\index{getCalendar@{getCalendar}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{getCalendar()}{getCalendar()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::get\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves calendar data from i\+Cloud.
+
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+\Hypertarget{classIcloud_1_1Icloud_a1ac863c42e5ee11409b789d9eb74322c}\label{classIcloud_1_1Icloud_a1ac863c42e5ee11409b789d9eb74322c} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!getContacts@{getContacts}}
+\index{getContacts@{getContacts}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{getContacts()}{getContacts()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::get\+Contacts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves contacts from i\+Cloud.
+
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+\Hypertarget{classIcloud_1_1Icloud_a729c158dc265b60741d8d1bbaf8e2d9f}\label{classIcloud_1_1Icloud_a729c158dc265b60741d8d1bbaf8e2d9f} 
+\index{Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}!uploadFile@{uploadFile}}
+\index{uploadFile@{uploadFile}!Icloud\textbackslash{}Icloud@{Icloud\textbackslash{}Icloud}}
+\doxysubsubsection{\texorpdfstring{uploadFile()}{uploadFile()}}
+{\footnotesize\ttfamily Icloud\textbackslash{}\+Icloud\+::upload\+File (\begin{DoxyParamCaption}\item[{string}]{\$file\+Path }\end{DoxyParamCaption})}
+
+Uploads a file to i\+Cloud.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array\texorpdfstring{$\vert$}{|}null 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev.\+sharpishly.\+com/website/vendor/\+Icloud/Icloud.\+php\end{DoxyCompactItemize}
