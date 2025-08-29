@@ -4,8 +4,10 @@ start.sh
 generate_ssl_certificate.sh
 nginx_reload.sh
 summary.txt
+
 #
 /shells
+.Trash-1000/
 
 # MySQL and back-up files
 mysql_data/
